@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Selah Ministry · Volunteer Schedule 2026–2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1c1c1c;--mid:#555;--soft:#999;--rule:#e4dfd8;--cream:#f9f7f2;--paper:#fffef9;
+  --forest:#2d5a35;--moss:#4a7a52;--sage:#7aaa80;
+  --se:#5a8a5e;--se-bg:#eef6ef;--se-b:#b8d9ba;
+  --so:#b5622a;--so-bg:#fdf3ec;--so-b:#e8b995;
+  --sp:#3a7fa8;--sp-bg:#eaf4fb;--sp-b:#a8d4e8;
+  --gold:#c4993a;--gold-bg:#fdf6e3;
+  --sh:0 2px 14px rgba(30,55,30,.08);--shl:0 6px 28px rgba(30,55,30,.13);--r:10px;
+}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);line-height:1.5}
+.hero{background:linear-gradient(155deg,var(--forest) 0%,var(--moss) 50%,#72a878 80%,#8abf80 100%);
+  padding:60px 28px 70px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 25% 60%,rgba(255,255,255,.07) 0%,transparent 55%);}
+.hbadge{display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.92);
+  font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  padding:5px 16px;border-radius:24px;margin-bottom:20px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5.5vw,4rem);
+  font-weight:700;color:#fff;line-height:1.1;margin-bottom:10px;text-shadow:0 2px 10px rgba(0,0,0,.18);}
+.hsub{color:rgba(255,255,255,.72);font-size:15px;font-weight:300;margin-bottom:26px;}
+.hpills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.hp{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+  color:#fff;padding:7px 16px;border-radius:22px;font-size:13px;font-weight:500;}
+.nav{position:sticky;top:0;z-index:200;background:var(--paper);
+  border-bottom:1px solid var(--rule);box-shadow:0 1px 6px rgba(0,0,0,.05);}
+.navi{max-width:1320px;margin:0 auto;padding:0 22px;display:flex;align-items:center;
+  gap:2px;overflow-x:auto;scrollbar-width:none;}
+.navi::-webkit-scrollbar{display:none}
+.nlbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--soft);padding:11px 8px 11px 0;border-right:1px solid var(--rule);margin-right:4px;white-space:nowrap;}
+.nl{white-space:nowrap;padding:5px 12px;border-radius:18px;font-size:12px;font-weight:500;
+  color:var(--mid);text-decoration:none;transition:.14s;}
+.nl:hover{background:var(--forest);color:#fff;}
+.tabs{background:var(--paper);border-bottom:2px solid var(--rule);}
+.tabi{max-width:1320px;margin:0 auto;display:flex;padding:0 22px;}
+.tb{padding:13px 24px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;
+  color:var(--mid);background:none;border:none;border-bottom:3px solid transparent;
+  margin-bottom:-2px;cursor:pointer;transition:.14s;}
+.tb:hover{color:var(--forest);}.tb.active{color:var(--forest);border-bottom-color:var(--forest);}
+.content{max-width:1320px;margin:0 auto;padding:38px 22px 80px;}
+.tp{display:none;}.tp.active{display:block;}
+.leg{display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+  background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);
+  padding:13px 18px;margin-bottom:30px;}
+.lbl{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--soft);}
+.li{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mid);font-weight:500;}
+.mb{margin-bottom:46px;scroll-margin-top:94px;}
+.mh{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;
+  color:var(--forest);margin-bottom:13px;display:flex;align-items:center;gap:9px;}
+.ml{width:9px;height:9px;background:var(--sage);border-radius:50%;flex-shrink:0;}
+.tw{overflow-x:auto;border-radius:var(--r);border:1px solid var(--rule);box-shadow:var(--sh);}
+.st{width:100%;border-collapse:collapse;background:var(--paper);min-width:740px;}
+.st thead tr{background:linear-gradient(135deg,var(--forest),var(--moss));}
+.st th{color:#fff;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;
+  padding:12px 14px;text-align:left;border-right:1px solid rgba(255,255,255,.15);}
+.st th em{display:block;font-style:normal;font-weight:300;font-size:10px;opacity:.75;
+  text-transform:none;letter-spacing:0;margin-top:2px;}
+.td{width:104px;}
+.st tbody tr{border-bottom:1px solid var(--rule);transition:background .1s;}
+.st tbody tr:last-child{border-bottom:none;}
+.st tbody tr:hover{background:rgba(74,122,82,.04);}
+.st td{padding:10px 13px;vertical-align:top;border-right:1px solid var(--rule);}
+.st td:last-child{border-right:none;}
+.wr.dr{background:rgba(181,98,42,.025);}.wr.fr{background:rgba(58,127,168,.025);}.wr.br{background:rgba(196,153,58,.025);}
+.wd{vertical-align:middle!important;}
+.ds{display:block;font-weight:600;font-size:13px;}
+.ob{display:inline-block;font-size:9px;font-weight:700;border-radius:3px;padding:2px 5px;margin-top:3px;margin-right:2px;letter-spacing:.2px;font-style:normal;}
+.od{background:var(--so-bg);color:var(--so);border:1px solid var(--so-b);}
+.of{background:var(--sp-bg);color:var(--sp);border:1px solid var(--sp-b);}
+.ob2{background:var(--gold-bg);color:#7a5510;border:1px solid #d4b060;}
+.rc{display:flex;flex-direction:column;gap:5px;}
+.rh{margin-bottom:1px;}
+.rn{font-size:10px;font-weight:700;font-style:italic;color:var(--so);
+  background:var(--so-bg);padding:3px 7px;border-radius:4px;border:1px solid var(--so-b);display:inline-block;}
+.rs{display:flex;flex-wrap:wrap;gap:4px;}.mt{color:var(--soft);font-size:12px;}
+.pt{display:inline-flex;align-items:center;position:relative;
+  font-size:11.5px;font-weight:500;padding:3px 9px;border-radius:18px;white-space:nowrap;cursor:default;}
+.th{background:linear-gradient(135deg,var(--forest),var(--moss));color:#fff;font-size:11px;font-weight:600;}
+.tp{background:var(--se-bg);color:var(--se);border:1px solid var(--se-b);}
+.tv{background:var(--so-bg);color:var(--so);border:1px solid var(--so-b);}
+.tt{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+  background:var(--ink);color:#fff;font-size:11px;font-weight:500;padding:5px 10px;
+  border-radius:6px;white-space:nowrap;pointer-events:none;z-index:500;letter-spacing:.3px;}
+.tt::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:var(--ink);}
+.pt:hover .tt{display:block;}
+/* DIRECTORY */
+.dsh{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;
+  color:var(--forest);margin-bottom:5px;margin-top:32px;}
+.dsh:first-child{margin-top:0;}
+.dsd{font-size:13px;color:var(--mid);margin-bottom:16px;line-height:1.6;}
+.dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:13px;margin-bottom:8px;}
+.dc{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);
+  padding:15px 17px;box-shadow:var(--sh);transition:transform .12s,box-shadow .12s;}
+.dc:hover{transform:translateY(-2px);box-shadow:var(--shl);}
+.dh{border-left:4px solid var(--forest);}
+.dn{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;margin-bottom:4px;}
+.dp{font-size:13px;color:var(--moss);font-weight:500;margin-bottom:9px;}
+.dbg{display:flex;flex-wrap:wrap;gap:5px;}
+.sn{font-size:10px;font-weight:600;color:var(--sp);background:var(--sp-bg);
+  padding:1px 7px;border-radius:9px;margin-left:7px;vertical-align:middle;}
+/* COUPLE CARDS */
+.couple-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px;margin-bottom:8px;}
+.cc{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);
+  box-shadow:var(--sh);overflow:hidden;transition:transform .12s,box-shadow .12s;}
+.cc:hover{transform:translateY(-2px);box-shadow:var(--shl);}
+.cc-head{padding:16px 18px;border-bottom:1px solid var(--rule);}
+.cc-names{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;margin-bottom:4px;}
+.amp{color:var(--soft);font-size:1rem;margin:0 4px;}
+.cc-phones{font-size:12px;color:var(--moss);font-weight:500;}
+.cc-rot{padding:0;}
+.rot-tbl{width:100%;border-collapse:collapse;font-size:12px;}
+.rot-tbl th{background:rgba(74,122,82,.06);color:var(--forest);font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.7px;padding:7px 14px;text-align:left;
+  border-bottom:1px solid var(--rule);}
+.rot-tbl td{padding:6px 14px;border-bottom:1px solid var(--rule);}
+.rot-tbl tr:last-child td{border-bottom:none;}
+.rot-month{font-weight:600;color:var(--ink);white-space:nowrap;}
+.rot-off{color:var(--soft);font-size:11px;}
+/* BADGES */
+.rb{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;padding:2px 8px;border-radius:10px;}
+.rh2{background:var(--forest);color:#fff;}
+.rp{background:var(--se-bg);color:var(--se);border:1px solid var(--se-b);}
+.rv{background:var(--so-bg);color:var(--so);border:1px solid var(--so-b);}
+.gb{font-size:10px;font-weight:600;padding:2px 7px;border-radius:9px;border:1px solid transparent;}
+.gseeds{background:var(--se-bg);color:var(--se);border-color:var(--se-b);}
+.gsow{background:var(--so-bg);color:var(--so);border-color:var(--so-b);}
+.gsprouts{background:var(--sp-bg);color:var(--sp);border-color:var(--sp-b);}
+/* STATS */
+.si{font-size:13px;color:var(--mid);margin-bottom:22px;line-height:1.6;max-width:660px;}
+.sw{overflow-x:auto;border-radius:var(--r);border:1px solid var(--rule);box-shadow:var(--sh);}
+.stb{width:100%;border-collapse:collapse;background:var(--paper);font-size:13px;min-width:660px;}
+.stb thead tr{background:linear-gradient(135deg,var(--forest),var(--moss));}
+.stb th{color:#fff;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.7px;padding:11px 13px;text-align:left;}
+.stb th.n,.stb td.n{text-align:center;}
+.stb tbody tr{border-bottom:1px solid var(--rule);transition:background .1s;}
+.stb tbody tr:last-child{border-bottom:none;}
+.stb tbody tr:hover{background:rgba(74,122,82,.04);}
+.stb td{padding:9px 13px;vertical-align:middle;}
+.n{font-weight:700;color:var(--forest);font-size:14px;}
+footer{background:var(--forest);color:rgba(255,255,255,.6);text-align:center;padding:26px 22px;font-size:12px;}
+footer strong{color:#fff;}
+@media(max-width:600px){.hero{padding:44px 16px 56px;}.content{padding:22px 13px 60px;}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hbadge">✦ Children's Ministry 2026–2027</div>
+  <h1>Selah Ministry<br>Volunteer Schedule</h1>
+  <p class="hsub">April 12, 2026 — March 28, 2027 · Sunday Services</p>
+  <div class="hpills">
+    <span class="hp">🌱 Selah Seeds · Ages 1–2</span>
+    <span class="hp">🪴 Selah Sow · Ages 3–4</span>
+    <span class="hp">🌳 Selah Sprouts · K–4th Grade</span>
+  </div>
+</header>
+<nav class="nav"><div class="navi"><span class="nlbl">Jump to</span><a href="#mapril-2026" class="nl">April'26</a><a href="#mmay-2026" class="nl">May'26</a><a href="#mjune-2026" class="nl">June'26</a><a href="#mjuly-2026" class="nl">July'26</a><a href="#maugust-2026" class="nl">August'26</a><a href="#mseptember-2026" class="nl">September'26</a><a href="#moctober-2026" class="nl">October'26</a><a href="#mnovember-2026" class="nl">November'26</a><a href="#mdecember-2026" class="nl">December'26</a><a href="#mjanuary-2027" class="nl">January'27</a><a href="#mfebruary-2027" class="nl">February'27</a><a href="#mmarch-2027" class="nl">March'27</a></div></nav>
+<div class="tabs"><div class="tabi">
+  <button class="tb active" onclick="show('schedule',this)">📅 Schedule</button>
+  <button class="tb" onclick="show('couples',this)">💑 Couples</button>
+  <button class="tb" onclick="show('directory',this)">👥 Directory</button>
+  <button class="tb" onclick="show('stats',this)">📊 Stats</button>
+</div></div>
+<main class="content">
+  <div id="tab-schedule" class="tp active">
+    <div class="leg">
+      <span class="lbl">Key</span>
+      <div class="li"><span class="pt th" style="pointer-events:none">Name</span>Head Teacher (weekly)</div>
+      <div class="li"><span class="pt tp" style="pointer-events:none">Name</span>Parent (1×/month, couples alternate)</div>
+      <div class="li"><span class="pt tv" style="pointer-events:none">Name</span>Volunteer (2-wk blocks)</div>
+      <div class="li"><span class="ob od">Diana Off</span>Seeds: 2 cover</div>
+      <div class="li"><span class="ob of">Faith Off</span>Sow: 2 cover</div>
+      <div class="li"><span class="ob ob2">Blair Off</span>Sprouts: 2 cover</div>
+      <div class="li" style="color:var(--soft);font-size:12px">💡 Hover name → phone number</div>
+    </div>
+    <section class="mb" id="mapril-2026">
+    <h2 class="mh"><span class="ml"></span>April 2026</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">Apr 12, 2026</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tp" title="626-807-8225">Megan Kim<span class="tt">626-807-8225</span></span><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="706-726-1261">Peter Choi<span class="tt">706-726-1261</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="770-616-6199">Josiah Bui<span class="tt">770-616-6199</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">Apr 19, 2026</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tp" title="847-691-0722">Andrew Song<span class="tt">847-691-0722</span></span><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="770-616-6199">Josiah Bui<span class="tt">770-616-6199</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">Apr 26, 2026</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tp" title="478-213-7643">Andy Kim<span class="tt">478-213-7643</span></span><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section><section class="mb" id="mmay-2026">
+    <h2 class="mh"><span class="ml"></span>May 2026</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">May 3, 2026</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tp" title="770-820-9547">Sarah Choi<span class="tt">770-820-9547</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">May 10, 2026</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tp" title="678-793-0089">Mimi Song<span class="tt">678-793-0089</span></span><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-753-3002">Samuel Park<span class="tt">470-753-3002</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">May 17, 2026</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="404-951-9793">Carol Kim<span class="tt">404-951-9793</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tv" title="470-753-3002">Samuel Park<span class="tt">470-753-3002</span></span><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">May 24, 2026</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">May 31, 2026</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tp" title="845-664-4898">Ji Kim<span class="tt">845-664-4898</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section><section class="mb" id="mjune-2026">
+    <h2 class="mh"><span class="ml"></span>June 2026</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">Jun 7, 2026</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="706-726-1261">Peter Choi<span class="tt">706-726-1261</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-772-8993">Daniel Kim<span class="tt">470-772-8993</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">Jun 14, 2026</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tp" title="847-691-0722">Andrew Song<span class="tt">847-691-0722</span></span><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-772-8993">Daniel Kim<span class="tt">470-772-8993</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">Jun 21, 2026</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="478-213-7643">Andy Kim<span class="tt">478-213-7643</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Jun 28, 2026</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="626-807-8225">Megan Kim<span class="tt">626-807-8225</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section><section class="mb" id="mjuly-2026">
+    <h2 class="mh"><span class="ml"></span>July 2026</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">Jul 5, 2026</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="770-820-9547">Sarah Choi<span class="tt">770-820-9547</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">Jul 12, 2026</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tp" title="678-793-0089">Mimi Song<span class="tt">678-793-0089</span></span><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="770-616-6199">Josiah Bui<span class="tt">770-616-6199</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">Jul 19, 2026</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tp" title="404-951-9793">Carol Kim<span class="tt">404-951-9793</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tv" title="770-616-6199">Josiah Bui<span class="tt">770-616-6199</span></span><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Jul 26, 2026</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tp" title="845-664-4898">Ji Kim<span class="tt">845-664-4898</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section><section class="mb" id="maugust-2026">
+    <h2 class="mh"><span class="ml"></span>August 2026</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">Aug 2, 2026</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">Aug 9, 2026</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span><span class="pt tp" title="706-726-1261">Peter Choi<span class="tt">706-726-1261</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-753-3002">Samuel Park<span class="tt">470-753-3002</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">Aug 16, 2026</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tp" title="478-213-7643">Andy Kim<span class="tt">478-213-7643</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tv" title="470-753-3002">Samuel Park<span class="tt">470-753-3002</span></span><span class="pt tp" title="847-691-0722">Andrew Song<span class="tt">847-691-0722</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Aug 23, 2026</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tp" title="626-807-8225">Megan Kim<span class="tt">626-807-8225</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Aug 30, 2026</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section><section class="mb" id="mseptember-2026">
+    <h2 class="mh"><span class="ml"></span>September 2026</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">Sep 6, 2026</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="770-820-9547">Sarah Choi<span class="tt">770-820-9547</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-772-8993">Daniel Kim<span class="tt">470-772-8993</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">Sep 13, 2026</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span><span class="pt tp" title="678-793-0089">Mimi Song<span class="tt">678-793-0089</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-772-8993">Daniel Kim<span class="tt">470-772-8993</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">Sep 20, 2026</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tp" title="404-951-9793">Carol Kim<span class="tt">404-951-9793</span></span><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Sep 27, 2026</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="845-664-4898">Ji Kim<span class="tt">845-664-4898</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section><section class="mb" id="moctober-2026">
+    <h2 class="mh"><span class="ml"></span>October 2026</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">Oct 4, 2026</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="626-807-8225">Megan Kim<span class="tt">626-807-8225</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tp" title="706-726-1261">Peter Choi<span class="tt">706-726-1261</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">Oct 11, 2026</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tp" title="847-691-0722">Andrew Song<span class="tt">847-691-0722</span></span><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="770-616-6199">Josiah Bui<span class="tt">770-616-6199</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">Oct 18, 2026</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="478-213-7643">Andy Kim<span class="tt">478-213-7643</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tv" title="770-616-6199">Josiah Bui<span class="tt">770-616-6199</span></span><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Oct 25, 2026</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section><section class="mb" id="mnovember-2026">
+    <h2 class="mh"><span class="ml"></span>November 2026</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">Nov 1, 2026</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">Nov 8, 2026</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tp" title="770-820-9547">Sarah Choi<span class="tt">770-820-9547</span></span><span class="pt tp" title="678-793-0089">Mimi Song<span class="tt">678-793-0089</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-753-3002">Samuel Park<span class="tt">470-753-3002</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">Nov 15, 2026</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="404-951-9793">Carol Kim<span class="tt">404-951-9793</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tv" title="470-753-3002">Samuel Park<span class="tt">470-753-3002</span></span><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Nov 22, 2026</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Nov 29, 2026</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tp" title="845-664-4898">Ji Kim<span class="tt">845-664-4898</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section><section class="mb" id="mdecember-2026">
+    <h2 class="mh"><span class="ml"></span>December 2026</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">Dec 6, 2026</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="706-726-1261">Peter Choi<span class="tt">706-726-1261</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-772-8993">Daniel Kim<span class="tt">470-772-8993</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">Dec 13, 2026</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tp" title="847-691-0722">Andrew Song<span class="tt">847-691-0722</span></span><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-772-8993">Daniel Kim<span class="tt">470-772-8993</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">Dec 20, 2026</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tp" title="478-213-7643">Andy Kim<span class="tt">478-213-7643</span></span><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Dec 27, 2026</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tp" title="626-807-8225">Megan Kim<span class="tt">626-807-8225</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="770-616-6199">Josiah Bui<span class="tt">770-616-6199</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section><section class="mb" id="mjanuary-2027">
+    <h2 class="mh"><span class="ml"></span>January 2027</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">Jan 3, 2027</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tp" title="678-622-7555">David Kim<span class="tt">678-622-7555</span></span><span class="pt tp" title="404-951-9793">Carol Kim<span class="tt">404-951-9793</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="845-664-4898">Ji Kim<span class="tt">845-664-4898</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-753-3002">Samuel Park<span class="tt">470-753-3002</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">Jan 10, 2027</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tp" title="TBD">Tiffany Kim<span class="tt">TBD</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="770-616-6199">Josiah Bui<span class="tt">770-616-6199</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">Jan 17, 2027</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tv" title="770-616-6199">Josiah Bui<span class="tt">770-616-6199</span></span><span class="pt tp" title="770-820-9547">Sarah Choi<span class="tt">770-820-9547</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Jan 24, 2027</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Jan 31, 2027</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="678-793-0089">Mimi Song<span class="tt">678-793-0089</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section><section class="mb" id="mfebruary-2027">
+    <h2 class="mh"><span class="ml"></span>February 2027</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">Feb 7, 2027</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tv" title="678-662-2934">Hae Mi Wang<span class="tt">678-662-2934</span></span><span class="pt tp" title="678-622-7555">Jihee Kim<span class="tt">678-622-7555</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="478-213-7643">Andy Kim<span class="tt">478-213-7643</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-753-3002">Samuel Park<span class="tt">470-753-3002</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">Feb 14, 2027</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tp" title="678-799-1261">Patrick Kim<span class="tt">678-799-1261</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span><span class="pt tp" title="626-807-8225">Megan Kim<span class="tt">626-807-8225</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-753-3002">Samuel Park<span class="tt">470-753-3002</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">Feb 21, 2027</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tp" title="706-726-1261">Peter Choi<span class="tt">706-726-1261</span></span><span class="pt tv" title="470-772-8993">Daniel Kim<span class="tt">470-772-8993</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Feb 28, 2027</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tp" title="847-691-0722">Andrew Song<span class="tt">847-691-0722</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section><section class="mb" id="mmarch-2027">
+    <h2 class="mh"><span class="ml"></span>March 2027</h2>
+    <div class="tw"><table class="st">
+      <thead><tr>
+        <th class="td">Sunday</th>
+        <th>🌱 Selah Seeds<em>Ages 1–2</em></th>
+        <th>🪴 Selah Sow<em>Ages 3–4</em></th>
+        <th>🌳 Selah Sprouts<em>K–4th Grade</em></th>
+      </tr></thead>
+      <tbody><tr class="wr dr">
+    <td class="wd"><span class="ds">Mar 7, 2027</span><b class="ob od">Diana Off</b></td>
+    <td><div class="rc"><div class="rh rn">★ Diana Off — 2 covering</div><div class="rs"><span class="pt tp" title="404-951-9793">Carol Kim<span class="tt">404-951-9793</span></span><span class="pt tv" title="845-492-7330">Lauren Yoon<span class="tt">845-492-7330</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tp" title="678-622-7555">David Kim<span class="tt">678-622-7555</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-772-8993">Daniel Kim<span class="tt">470-772-8993</span></span></div></div></td>
+  </tr><tr class="wr fr">
+    <td class="wd"><span class="ds">Mar 14, 2027</span><b class="ob of">Faith Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tp" title="845-664-4898">Ji Kim<span class="tt">845-664-4898</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Faith Off — 2 covering</div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span><span class="pt tp" title="TBD">Tiffany Kim<span class="tt">TBD</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tv" title="470-772-8993">Daniel Kim<span class="tt">470-772-8993</span></span></div></div></td>
+  </tr><tr class="wr br">
+    <td class="wd"><span class="ds">Mar 21, 2027</span><b class="ob ob2">Blair Off</b></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="917-375-9596">Christine Ku<span class="tt">917-375-9596</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh rn">★ Blair Off — 2 covering</div><div class="rs"><span class="pt tp" title="770-820-9547">Sarah Choi<span class="tt">770-820-9547</span></span><span class="pt tv" title="770-882-9357">Benji Suh<span class="tt">770-882-9357</span></span></div></div></td>
+  </tr><tr class="wr ">
+    <td class="wd"><span class="ds">Mar 28, 2027</span></td>
+    <td><div class="rc"><div class="rh"><span class="pt th" title="478-390-3809">Diana Jang<span class="tt">478-390-3809</span></span></div><div class="rs"><span class="pt tv" title="770-807-5196">Deborah Hwang<span class="tt">770-807-5196</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="404-312-2843">Faith Wang<span class="tt">404-312-2843</span></span></div><div class="rs"><span class="pt tv" title="865-242-5282">Stephen<span class="tt">865-242-5282</span></span></div></div></td><td><div class="rc"><div class="rh"><span class="pt th" title="TBD">Blair Kim<span class="tt">TBD</span></span></div><div class="rs"><span class="pt tp" title="678-793-0089">Mimi Song<span class="tt">678-793-0089</span></span></div></div></td>
+  </tr></tbody>
+    </table></div>
+  </section>
+  </div>
+  <div id="tab-couples" class="tp">
+    <h3 class="dsh" style="margin-top:0">Couple Rotation Schedule</h3>
+    <p class="dsd">Each couple alternates monthly — only one partner serves per month. The rotation table below shows exactly who serves each month for every couple. Couples marked <span class="sn">Jan 2027+</span> begin their rotation in January 2027.</p>
+    <div class="couple-grid"><div class="cc">
+    <div class="cc-head">
+      <div>
+        <div class="cc-names">Peter Choi <span class="amp">&</span> Sarah Choi</div>
+        <div class="cc-phones">📞 706-726-1261 &nbsp;·&nbsp; 📞 770-820-9547</div>
+        <div class="dbg" style="margin-top:7px"><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+      </div>
+    </div>
+    <div class="cc-rot"><table class="rot-tbl"><thead><tr>
+    <th>Month</th><th>Serving ✅</th><th>Off 🏠</th>
+  </tr></thead><tbody><tr>
+      <td class="rot-month">April'26</td>
+      <td><span class="pt tp">Peter Choi</span></td>
+      <td class="rot-off">Sarah Choi</td>
+    </tr><tr>
+      <td class="rot-month">May'26</td>
+      <td><span class="pt tp">Sarah Choi</span></td>
+      <td class="rot-off">Peter Choi</td>
+    </tr><tr>
+      <td class="rot-month">June'26</td>
+      <td><span class="pt tp">Peter Choi</span></td>
+      <td class="rot-off">Sarah Choi</td>
+    </tr><tr>
+      <td class="rot-month">July'26</td>
+      <td><span class="pt tp">Sarah Choi</span></td>
+      <td class="rot-off">Peter Choi</td>
+    </tr><tr>
+      <td class="rot-month">August'26</td>
+      <td><span class="pt tp">Peter Choi</span></td>
+      <td class="rot-off">Sarah Choi</td>
+    </tr><tr>
+      <td class="rot-month">September'26</td>
+      <td><span class="pt tp">Sarah Choi</span></td>
+      <td class="rot-off">Peter Choi</td>
+    </tr><tr>
+      <td class="rot-month">October'26</td>
+      <td><span class="pt tp">Peter Choi</span></td>
+      <td class="rot-off">Sarah Choi</td>
+    </tr><tr>
+      <td class="rot-month">November'26</td>
+      <td><span class="pt tp">Sarah Choi</span></td>
+      <td class="rot-off">Peter Choi</td>
+    </tr><tr>
+      <td class="rot-month">December'26</td>
+      <td><span class="pt tp">Peter Choi</span></td>
+      <td class="rot-off">Sarah Choi</td>
+    </tr><tr>
+      <td class="rot-month">January'27</td>
+      <td><span class="pt tp">Sarah Choi</span></td>
+      <td class="rot-off">Peter Choi</td>
+    </tr><tr>
+      <td class="rot-month">February'27</td>
+      <td><span class="pt tp">Peter Choi</span></td>
+      <td class="rot-off">Sarah Choi</td>
+    </tr><tr>
+      <td class="rot-month">March'27</td>
+      <td><span class="pt tp">Sarah Choi</span></td>
+      <td class="rot-off">Peter Choi</td>
+    </tr></tbody></table></div>
+  </div><div class="cc">
+    <div class="cc-head">
+      <div>
+        <div class="cc-names">Andrew Song <span class="amp">&</span> Mimi Song</div>
+        <div class="cc-phones">📞 847-691-0722 &nbsp;·&nbsp; 📞 678-793-0089</div>
+        <div class="dbg" style="margin-top:7px"><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+      </div>
+    </div>
+    <div class="cc-rot"><table class="rot-tbl"><thead><tr>
+    <th>Month</th><th>Serving ✅</th><th>Off 🏠</th>
+  </tr></thead><tbody><tr>
+      <td class="rot-month">April'26</td>
+      <td><span class="pt tp">Andrew Song</span></td>
+      <td class="rot-off">Mimi Song</td>
+    </tr><tr>
+      <td class="rot-month">May'26</td>
+      <td><span class="pt tp">Mimi Song</span></td>
+      <td class="rot-off">Andrew Song</td>
+    </tr><tr>
+      <td class="rot-month">June'26</td>
+      <td><span class="pt tp">Andrew Song</span></td>
+      <td class="rot-off">Mimi Song</td>
+    </tr><tr>
+      <td class="rot-month">July'26</td>
+      <td><span class="pt tp">Mimi Song</span></td>
+      <td class="rot-off">Andrew Song</td>
+    </tr><tr>
+      <td class="rot-month">August'26</td>
+      <td><span class="pt tp">Andrew Song</span></td>
+      <td class="rot-off">Mimi Song</td>
+    </tr><tr>
+      <td class="rot-month">September'26</td>
+      <td><span class="pt tp">Mimi Song</span></td>
+      <td class="rot-off">Andrew Song</td>
+    </tr><tr>
+      <td class="rot-month">October'26</td>
+      <td><span class="pt tp">Andrew Song</span></td>
+      <td class="rot-off">Mimi Song</td>
+    </tr><tr>
+      <td class="rot-month">November'26</td>
+      <td><span class="pt tp">Mimi Song</span></td>
+      <td class="rot-off">Andrew Song</td>
+    </tr><tr>
+      <td class="rot-month">December'26</td>
+      <td><span class="pt tp">Andrew Song</span></td>
+      <td class="rot-off">Mimi Song</td>
+    </tr><tr>
+      <td class="rot-month">January'27</td>
+      <td><span class="pt tp">Mimi Song</span></td>
+      <td class="rot-off">Andrew Song</td>
+    </tr><tr>
+      <td class="rot-month">February'27</td>
+      <td><span class="pt tp">Andrew Song</span></td>
+      <td class="rot-off">Mimi Song</td>
+    </tr><tr>
+      <td class="rot-month">March'27</td>
+      <td><span class="pt tp">Mimi Song</span></td>
+      <td class="rot-off">Andrew Song</td>
+    </tr></tbody></table></div>
+  </div><div class="cc">
+    <div class="cc-head">
+      <div>
+        <div class="cc-names">Andy Kim <span class="amp">&</span> Carol Kim</div>
+        <div class="cc-phones">📞 478-213-7643 &nbsp;·&nbsp; 📞 404-951-9793</div>
+        <div class="dbg" style="margin-top:7px"><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+      </div>
+    </div>
+    <div class="cc-rot"><table class="rot-tbl"><thead><tr>
+    <th>Month</th><th>Serving ✅</th><th>Off 🏠</th>
+  </tr></thead><tbody><tr>
+      <td class="rot-month">April'26</td>
+      <td><span class="pt tp">Andy Kim</span></td>
+      <td class="rot-off">Carol Kim</td>
+    </tr><tr>
+      <td class="rot-month">May'26</td>
+      <td><span class="pt tp">Carol Kim</span></td>
+      <td class="rot-off">Andy Kim</td>
+    </tr><tr>
+      <td class="rot-month">June'26</td>
+      <td><span class="pt tp">Andy Kim</span></td>
+      <td class="rot-off">Carol Kim</td>
+    </tr><tr>
+      <td class="rot-month">July'26</td>
+      <td><span class="pt tp">Carol Kim</span></td>
+      <td class="rot-off">Andy Kim</td>
+    </tr><tr>
+      <td class="rot-month">August'26</td>
+      <td><span class="pt tp">Andy Kim</span></td>
+      <td class="rot-off">Carol Kim</td>
+    </tr><tr>
+      <td class="rot-month">September'26</td>
+      <td><span class="pt tp">Carol Kim</span></td>
+      <td class="rot-off">Andy Kim</td>
+    </tr><tr>
+      <td class="rot-month">October'26</td>
+      <td><span class="pt tp">Andy Kim</span></td>
+      <td class="rot-off">Carol Kim</td>
+    </tr><tr>
+      <td class="rot-month">November'26</td>
+      <td><span class="pt tp">Carol Kim</span></td>
+      <td class="rot-off">Andy Kim</td>
+    </tr><tr>
+      <td class="rot-month">December'26</td>
+      <td><span class="pt tp">Andy Kim</span></td>
+      <td class="rot-off">Carol Kim</td>
+    </tr><tr>
+      <td class="rot-month">January'27</td>
+      <td><span class="pt tp">Carol Kim</span></td>
+      <td class="rot-off">Andy Kim</td>
+    </tr><tr>
+      <td class="rot-month">February'27</td>
+      <td><span class="pt tp">Andy Kim</span></td>
+      <td class="rot-off">Carol Kim</td>
+    </tr><tr>
+      <td class="rot-month">March'27</td>
+      <td><span class="pt tp">Carol Kim</span></td>
+      <td class="rot-off">Andy Kim</td>
+    </tr></tbody></table></div>
+  </div><div class="cc">
+    <div class="cc-head">
+      <div>
+        <div class="cc-names">Megan Kim <span class="amp">&</span> Ji Kim</div>
+        <div class="cc-phones">📞 626-807-8225 &nbsp;·&nbsp; 📞 845-664-4898</div>
+        <div class="dbg" style="margin-top:7px"><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span></div>
+      </div>
+    </div>
+    <div class="cc-rot"><table class="rot-tbl"><thead><tr>
+    <th>Month</th><th>Serving ✅</th><th>Off 🏠</th>
+  </tr></thead><tbody><tr>
+      <td class="rot-month">April'26</td>
+      <td><span class="pt tp">Megan Kim</span></td>
+      <td class="rot-off">Ji Kim</td>
+    </tr><tr>
+      <td class="rot-month">May'26</td>
+      <td><span class="pt tp">Ji Kim</span></td>
+      <td class="rot-off">Megan Kim</td>
+    </tr><tr>
+      <td class="rot-month">June'26</td>
+      <td><span class="pt tp">Megan Kim</span></td>
+      <td class="rot-off">Ji Kim</td>
+    </tr><tr>
+      <td class="rot-month">July'26</td>
+      <td><span class="pt tp">Ji Kim</span></td>
+      <td class="rot-off">Megan Kim</td>
+    </tr><tr>
+      <td class="rot-month">August'26</td>
+      <td><span class="pt tp">Megan Kim</span></td>
+      <td class="rot-off">Ji Kim</td>
+    </tr><tr>
+      <td class="rot-month">September'26</td>
+      <td><span class="pt tp">Ji Kim</span></td>
+      <td class="rot-off">Megan Kim</td>
+    </tr><tr>
+      <td class="rot-month">October'26</td>
+      <td><span class="pt tp">Megan Kim</span></td>
+      <td class="rot-off">Ji Kim</td>
+    </tr><tr>
+      <td class="rot-month">November'26</td>
+      <td><span class="pt tp">Ji Kim</span></td>
+      <td class="rot-off">Megan Kim</td>
+    </tr><tr>
+      <td class="rot-month">December'26</td>
+      <td><span class="pt tp">Megan Kim</span></td>
+      <td class="rot-off">Ji Kim</td>
+    </tr><tr>
+      <td class="rot-month">January'27</td>
+      <td><span class="pt tp">Ji Kim</span></td>
+      <td class="rot-off">Megan Kim</td>
+    </tr><tr>
+      <td class="rot-month">February'27</td>
+      <td><span class="pt tp">Megan Kim</span></td>
+      <td class="rot-off">Ji Kim</td>
+    </tr><tr>
+      <td class="rot-month">March'27</td>
+      <td><span class="pt tp">Ji Kim</span></td>
+      <td class="rot-off">Megan Kim</td>
+    </tr></tbody></table></div>
+  </div><div class="cc">
+    <div class="cc-head">
+      <div>
+        <div class="cc-names">David Kim <span class="amp">&</span> Jihee Kim<span class="sn">Jan 2027+</span></div>
+        <div class="cc-phones">📞 678-622-7555 &nbsp;·&nbsp; 📞 678-622-7555</div>
+        <div class="dbg" style="margin-top:7px"><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+      </div>
+    </div>
+    <div class="cc-rot"><table class="rot-tbl"><thead><tr>
+    <th>Month</th><th>Serving ✅</th><th>Off 🏠</th>
+  </tr></thead><tbody><tr>
+      <td class="rot-month">January'27</td>
+      <td><span class="pt tp">David Kim</span></td>
+      <td class="rot-off">Jihee Kim</td>
+    </tr><tr>
+      <td class="rot-month">February'27</td>
+      <td><span class="pt tp">Jihee Kim</span></td>
+      <td class="rot-off">David Kim</td>
+    </tr><tr>
+      <td class="rot-month">March'27</td>
+      <td><span class="pt tp">David Kim</span></td>
+      <td class="rot-off">Jihee Kim</td>
+    </tr></tbody></table></div>
+  </div><div class="cc">
+    <div class="cc-head">
+      <div>
+        <div class="cc-names">Tiffany Kim <span class="amp">&</span> Patrick Kim<span class="sn">Jan 2027+</span></div>
+        <div class="cc-phones">📞 TBD &nbsp;·&nbsp; 📞 678-799-1261</div>
+        <div class="dbg" style="margin-top:7px"><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+      </div>
+    </div>
+    <div class="cc-rot"><table class="rot-tbl"><thead><tr>
+    <th>Month</th><th>Serving ✅</th><th>Off 🏠</th>
+  </tr></thead><tbody><tr>
+      <td class="rot-month">January'27</td>
+      <td><span class="pt tp">Tiffany Kim</span></td>
+      <td class="rot-off">Patrick Kim</td>
+    </tr><tr>
+      <td class="rot-month">February'27</td>
+      <td><span class="pt tp">Patrick Kim</span></td>
+      <td class="rot-off">Tiffany Kim</td>
+    </tr><tr>
+      <td class="rot-month">March'27</td>
+      <td><span class="pt tp">Tiffany Kim</span></td>
+      <td class="rot-off">Patrick Kim</td>
+    </tr></tbody></table></div>
+  </div></div>
+  </div>
+  <div id="tab-directory" class="tp">
+    <h3 class="dsh" style="margin-top:0">Head Teachers</h3>
+    <p class="dsd">Serve every week except their designated off Sunday (Diana=1st, Faith=2nd, Blair=3rd of each month). Off weeks never overlap.</p>
+    <div class="dg"><div class="dc dh">
+    <div class="dn">Diana Jang</div>
+    <div class="dp">📞 478-390-3809</div>
+    <div class="dbg"><span class="rb rh2">★ Head</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span></div>
+  </div><div class="dc dh">
+    <div class="dn">Faith Wang</div>
+    <div class="dp">📞 404-312-2843</div>
+    <div class="dbg"><span class="rb rh2">★ Head</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc dh">
+    <div class="dn">Blair Kim</div>
+    <div class="dp">📞 TBD</div>
+    <div class="dbg"><span class="rb rh2">★ Head</span><span class="gb gsprouts">🌳 Sprouts</span><span class="gb gsow">🪴 Sow</span><span class="gb gseeds">🌱 Seeds</span></div>
+  </div></div>
+    <h3 class="dsh">Parents</h3>
+    <p class="dsd">Each couple alternates monthly. Individuals serve exactly once per active month. See the Couples tab for the full rotation schedule.</p>
+    <div class="dg"><div class="dc">
+    <div class="dn">Peter Choi</div>
+    <div class="dp">📞 706-726-1261</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Sarah Choi</div>
+    <div class="dp">📞 770-820-9547</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Andrew Song</div>
+    <div class="dp">📞 847-691-0722</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Mimi Song</div>
+    <div class="dp">📞 678-793-0089</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Andy Kim</div>
+    <div class="dp">📞 478-213-7643</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Carol Kim</div>
+    <div class="dp">📞 404-951-9793</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Ji Kim</div>
+    <div class="dp">📞 845-664-4898</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span></div>
+  </div><div class="dc">
+    <div class="dn">Megan Kim</div>
+    <div class="dp">📞 626-807-8225</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span></div>
+  </div><div class="dc">
+    <div class="dn">David Kim<span class="sn">Jan 2027+</span></div>
+    <div class="dp">📞 678-622-7555</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Jihee Kim<span class="sn">Jan 2027+</span></div>
+    <div class="dp">📞 678-622-7555</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Tiffany Kim<span class="sn">Jan 2027+</span></div>
+    <div class="dp">📞 TBD</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Patrick Kim<span class="sn">Jan 2027+</span></div>
+    <div class="dp">📞 678-799-1261</div>
+    <div class="dbg"><span class="rb rp">Parent</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div></div>
+    <h3 class="dsh">Volunteers</h3>
+    <p class="dsd">Serve in 2-week consecutive blocks where possible. Always serve more total weeks than any single parent in a given year.</p>
+    <div class="dg"><div class="dc">
+    <div class="dn">Benji Suh</div>
+    <div class="dp">📞 770-882-9357</div>
+    <div class="dbg"><span class="rb rv">Volunteer</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Lauren Yoon</div>
+    <div class="dp">📞 845-492-7330</div>
+    <div class="dbg"><span class="rb rv">Volunteer</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span></div>
+  </div><div class="dc">
+    <div class="dn">Christine Ku</div>
+    <div class="dp">📞 917-375-9596</div>
+    <div class="dbg"><span class="rb rv">Volunteer</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span></div>
+  </div><div class="dc">
+    <div class="dn">Josiah Bui</div>
+    <div class="dp">📞 770-616-6199</div>
+    <div class="dbg"><span class="rb rv">Volunteer</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Samuel Park</div>
+    <div class="dp">📞 470-753-3002</div>
+    <div class="dbg"><span class="rb rv">Volunteer</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Stephen</div>
+    <div class="dp">📞 865-242-5282</div>
+    <div class="dbg"><span class="rb rv">Volunteer</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Daniel Kim</div>
+    <div class="dp">📞 470-772-8993</div>
+    <div class="dbg"><span class="rb rv">Volunteer</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div><div class="dc">
+    <div class="dn">Deborah Hwang</div>
+    <div class="dp">📞 770-807-5196</div>
+    <div class="dbg"><span class="rb rv">Volunteer</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span></div>
+  </div><div class="dc">
+    <div class="dn">Hae Mi Wang</div>
+    <div class="dp">📞 678-662-2934</div>
+    <div class="dbg"><span class="rb rv">Volunteer</span><span class="gb gseeds">🌱 Seeds</span><span class="gb gsow">🪴 Sow</span><span class="gb gsprouts">🌳 Sprouts</span></div>
+  </div></div>
+  </div>
+  <div id="tab-stats" class="tp">
+    <p class="si">Total Sundays served per person by classroom. Parents serve ~6 months each (their half of the couple rotation). All volunteers serve more weeks than any individual parent. Hover names in the schedule to see phone numbers.</p>
+    <div class="sw"><table class="stb">
+      <thead><tr>
+        <th>Name</th><th>Phone</th><th>Role</th>
+        <th class="n">Total</th><th class="n">🌱</th><th class="n">🪴</th><th class="n">🌳</th><th class="n">Months</th>
+      </tr></thead>
+      <tbody><tr>
+      <td><strong>Peter Choi</strong></td>
+      <td>706-726-1261</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">6</td><td class="n">0</td>
+      <td class="n">4</td><td class="n">2</td>
+      <td class="n">6/6</td>
+    </tr><tr>
+      <td><strong>Sarah Choi</strong></td>
+      <td>770-820-9547</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">6</td><td class="n">0</td>
+      <td class="n">3</td><td class="n">3</td>
+      <td class="n">6/6</td>
+    </tr><tr>
+      <td><strong>Andrew Song</strong></td>
+      <td>847-691-0722</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">6</td><td class="n">0</td>
+      <td class="n">4</td><td class="n">2</td>
+      <td class="n">6/6</td>
+    </tr><tr>
+      <td><strong>Mimi Song</strong></td>
+      <td>678-793-0089</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">6</td><td class="n">0</td>
+      <td class="n">5</td><td class="n">1</td>
+      <td class="n">6/6</td>
+    </tr><tr>
+      <td><strong>Andy Kim</strong></td>
+      <td>478-213-7643</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">6</td><td class="n">1</td>
+      <td class="n">3</td><td class="n">2</td>
+      <td class="n">6/6</td>
+    </tr><tr>
+      <td><strong>Carol Kim</strong></td>
+      <td>404-951-9793</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">6</td><td class="n">3</td>
+      <td class="n">2</td><td class="n">1</td>
+      <td class="n">6/6</td>
+    </tr><tr>
+      <td><strong>Ji Kim</strong></td>
+      <td>845-664-4898</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">6</td><td class="n">4</td>
+      <td class="n">2</td><td class="n">0</td>
+      <td class="n">6/6</td>
+    </tr><tr>
+      <td><strong>Megan Kim</strong></td>
+      <td>626-807-8225</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">6</td><td class="n">3</td>
+      <td class="n">3</td><td class="n">0</td>
+      <td class="n">6/6</td>
+    </tr><tr>
+      <td><strong>David Kim</strong><span class="sn">Jan+</span></td>
+      <td>678-622-7555</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">2</td><td class="n">1</td>
+      <td class="n">1</td><td class="n">0</td>
+      <td class="n">2/2</td>
+    </tr><tr>
+      <td><strong>Jihee Kim</strong><span class="sn">Jan+</span></td>
+      <td>678-622-7555</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">1</td><td class="n">1</td>
+      <td class="n">0</td><td class="n">0</td>
+      <td class="n">1/2</td>
+    </tr><tr>
+      <td><strong>Tiffany Kim</strong><span class="sn">Jan+</span></td>
+      <td>TBD</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">2</td><td class="n">1</td>
+      <td class="n">1</td><td class="n">0</td>
+      <td class="n">2/2</td>
+    </tr><tr>
+      <td><strong>Patrick Kim</strong><span class="sn">Jan+</span></td>
+      <td>678-799-1261</td>
+      <td><span class="rb rp">Parent</span></td>
+      <td class="n">1</td><td class="n">1</td>
+      <td class="n">0</td><td class="n">0</td>
+      <td class="n">1/2</td>
+    </tr><tr>
+      <td><strong>Benji Suh</strong></td>
+      <td>770-882-9357</td>
+      <td><span class="rb rv">Vol</span></td>
+      <td class="n">15</td><td class="n">0</td>
+      <td class="n">6</td><td class="n">9</td>
+      <td class="n">10/12</td>
+    </tr><tr>
+      <td><strong>Lauren Yoon</strong></td>
+      <td>845-492-7330</td>
+      <td><span class="rb rv">Vol</span></td>
+      <td class="n">16</td><td class="n">10</td>
+      <td class="n">6</td><td class="n">0</td>
+      <td class="n">9/12</td>
+    </tr><tr>
+      <td><strong>Christine Ku</strong></td>
+      <td>917-375-9596</td>
+      <td><span class="rb rv">Vol</span></td>
+      <td class="n">16</td><td class="n">10</td>
+      <td class="n">6</td><td class="n">0</td>
+      <td class="n">10/12</td>
+    </tr><tr>
+      <td><strong>Josiah Bui</strong></td>
+      <td>770-616-6199</td>
+      <td><span class="rb rv">Vol</span></td>
+      <td class="n">9</td><td class="n">0</td>
+      <td class="n">0</td><td class="n">9</td>
+      <td class="n">5/12</td>
+    </tr><tr>
+      <td><strong>Samuel Park</strong></td>
+      <td>470-753-3002</td>
+      <td><span class="rb rv">Vol</span></td>
+      <td class="n">9</td><td class="n">0</td>
+      <td class="n">0</td><td class="n">9</td>
+      <td class="n">5/12</td>
+    </tr><tr>
+      <td><strong>Stephen</strong></td>
+      <td>865-242-5282</td>
+      <td><span class="rb rv">Vol</span></td>
+      <td class="n">23</td><td class="n">9</td>
+      <td class="n">6</td><td class="n">8</td>
+      <td class="n">12/12</td>
+    </tr><tr>
+      <td><strong>Daniel Kim</strong></td>
+      <td>470-772-8993</td>
+      <td><span class="rb rv">Vol</span></td>
+      <td class="n">9</td><td class="n">0</td>
+      <td class="n">0</td><td class="n">9</td>
+      <td class="n">5/12</td>
+    </tr><tr>
+      <td><strong>Deborah Hwang</strong></td>
+      <td>770-807-5196</td>
+      <td><span class="rb rv">Vol</span></td>
+      <td class="n">16</td><td class="n">10</td>
+      <td class="n">6</td><td class="n">0</td>
+      <td class="n">8/12</td>
+    </tr><tr>
+      <td><strong>Hae Mi Wang</strong></td>
+      <td>678-662-2934</td>
+      <td><span class="rb rv">Vol</span></td>
+      <td class="n">22</td><td class="n">9</td>
+      <td class="n">5</td><td class="n">8</td>
+      <td class="n">11/12</td>
+    </tr></tbody>
+    </table></div>
+  </div>
+</main>
+<footer>
+  <p><strong>Selah Children's Ministry</strong> · Volunteer Schedule April 2026 – March 2027 · 51 Sundays</p>
+  <p style="margin-top:5px">Couples alternate monthly · Every room staffed by exactly 2 people · Hover names for phone numbers</p>
+</footer>
+<script>
+function show(id,btn){
+  document.querySelectorAll('.tp').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+document.querySelectorAll('.nl').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault();
+    const t=document.getElementById(a.getAttribute('href').slice(1));
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+</body></html>
