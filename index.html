@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Selah Ministry · Volunteer Schedule 2026–2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#2d5a35;--moss:#4a7a52;--sage:#7aaa80;
+  --ink:#1c1c1c;--mid:#555;--soft:#999;--rule:#e4dfd8;--cream:#f9f7f2;--paper:#fffef9;
+  --se:#5a8a5e;--se-bg:#eef6ef;--se-b:#b8d9ba;
+  --so:#b5622a;--so-bg:#fdf3ec;--so-b:#e8b995;
+  --sp:#3a7fa8;--sp-bg:#eaf4fb;--sp-b:#a8d4e8;
+  --gold:#c4993a;--gold-bg:#fdf6e3;
+  --sh:0 2px 14px rgba(30,55,30,.08);--shl:0 8px 28px rgba(30,55,30,.14);--r:10px;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.5;min-height:100vh}
+
+/* HERO */
+.hero{background:linear-gradient(150deg,var(--forest) 0%,var(--moss) 55%,#72a878 100%);
+  padding:56px 28px 68px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 20% 60%,rgba(255,255,255,.07) 0%,transparent 50%);}
+.hero-badge{display:inline-flex;align-items:center;background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.9);
+  font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  padding:5px 16px;border-radius:24px;margin-bottom:18px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.8rem);
+  font-weight:700;color:#fff;line-height:1.1;margin-bottom:10px;text-shadow:0 2px 10px rgba(0,0,0,.2);}
+.hero-sub{color:rgba(255,255,255,.72);font-size:15px;font-weight:300;margin-bottom:24px;}
+.hero-pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.hero-pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+  color:#fff;padding:6px 16px;border-radius:22px;font-size:13px;font-weight:500;}
+
+/* NAV */
+.sticky-nav{position:sticky;top:0;z-index:200;background:var(--paper);
+  border-bottom:1px solid var(--rule);box-shadow:0 1px 6px rgba(0,0,0,.05);}
+.nav-inner{max-width:1300px;margin:0 auto;padding:0 20px;display:flex;align-items:center;
+  gap:2px;overflow-x:auto;scrollbar-width:none;}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--soft);padding:10px 8px 10px 0;border-right:1px solid var(--rule);
+  margin-right:4px;white-space:nowrap;}
+.nav-link{white-space:nowrap;padding:5px 12px;border-radius:18px;font-size:12px;
+  font-weight:500;color:var(--mid);text-decoration:none;transition:.14s;}
+.nav-link:hover{background:var(--forest);color:#fff;}
+
+/* TABS */
+.tabs-bar{background:var(--paper);border-bottom:2px solid var(--rule);}
+.tabs-inner{max-width:1300px;margin:0 auto;display:flex;padding:0 20px;}
+.tab-btn{padding:12px 22px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;
+  color:var(--mid);background:none;border:none;border-bottom:3px solid transparent;
+  margin-bottom:-2px;cursor:pointer;transition:.14s;white-space:nowrap;}
+.tab-btn:hover{color:var(--forest);}
+.tab-btn.active{color:var(--forest);border-bottom-color:var(--forest);}
+
+/* CONTENT */
+.content{max-width:1300px;margin:0 auto;padding:36px 20px 80px;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* LEGEND */
+.legend{display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);
+  padding:12px 18px;margin-bottom:28px;}
+.legend-label{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--soft);}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mid);font-weight:500;}
+
+/* MONTH */
+.month-section{margin-bottom:44px;scroll-margin-top:90px;}
+.month-heading{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;
+  color:var(--forest);margin-bottom:12px;display:flex;align-items:center;gap:9px;}
+.month-dot{width:8px;height:8px;background:var(--sage);border-radius:50%;flex-shrink:0;}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--rule);box-shadow:var(--sh);}
+.sched-table{width:100%;border-collapse:collapse;background:var(--paper);min-width:720px;}
+.sched-table thead tr{background:linear-gradient(135deg,var(--forest),var(--moss));}
+.sched-table th{color:#fff;font-size:11px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.7px;padding:12px 14px;text-align:left;border-right:1px solid rgba(255,255,255,.15);}
+.sched-table th em{display:block;font-style:normal;font-weight:300;font-size:10px;
+  opacity:.75;text-transform:none;letter-spacing:0;margin-top:2px;}
+.th-date{width:106px;}
+.sched-table tbody tr{border-bottom:1px solid var(--rule);transition:background .1s;}
+.sched-table tbody tr:last-child{border-bottom:none;}
+.sched-table tbody tr:hover{background:rgba(74,122,82,.03);}
+.sched-table td{padding:10px 12px;vertical-align:top;border-right:1px solid var(--rule);}
+.sched-table td:last-child{border-right:none;}
+.row-doff{background:rgba(181,98,42,.025);}
+.row-foff{background:rgba(58,127,168,.025);}
+.row-boff{background:rgba(196,153,58,.025);}
+.date-cell{vertical-align:middle!important;}
+.date-text{display:block;font-weight:600;font-size:13px;}
+.off-badge{display:inline-block;font-size:9px;font-weight:700;border-radius:3px;
+  padding:2px 5px;margin-top:3px;margin-right:2px;font-style:normal;}
+.off-diana{background:var(--so-bg);color:var(--so);border:1px solid var(--so-b);}
+.off-faith{background:var(--sp-bg);color:var(--sp);border:1px solid var(--sp-b);}
+.off-blair{background:var(--gold-bg);color:#7a5510;border:1px solid #d4b060;}
+
+/* ROOM CELL */
+.room-cell{display:flex;flex-direction:column;gap:4px;}
+.room-head-row{margin-bottom:2px;}
+.covering-note{font-size:10px;font-weight:700;font-style:italic;color:var(--so);
+  background:var(--so-bg);padding:2px 7px;border-radius:4px;
+  border:1px solid var(--so-b);display:inline-block;}
+.staff-row{display:flex;flex-wrap:wrap;gap:4px;align-items:center;}
+.empty-slot{color:var(--soft);font-size:12px;}
+
+/* PERSON TAGS — these are <button> elements for editability */
+.ptag{display:inline-flex;align-items:center;position:relative;
+  font-size:11.5px;font-weight:500;padding:3px 10px;border-radius:18px;
+  white-space:nowrap;cursor:pointer;border:none;font-family:inherit;
+  transition:opacity .12s, box-shadow .12s;}
+.ptag:not(.ptag-head):hover{opacity:.82;box-shadow:0 0 0 2px var(--forest);}
+.ptag-head{background:linear-gradient(135deg,var(--forest),var(--moss));color:#fff;
+  font-size:11px;font-weight:600;cursor:default;}
+.ptag-parent{background:var(--se-bg);color:var(--se);border:1px solid var(--se-b);}
+.ptag-vol{background:var(--so-bg);color:var(--so);border:1px solid var(--so-b);}
+.ptag-custom{background:#f0f0f0;color:#444;border:1px solid #ccc;}
+.edit-pen{font-size:9px;opacity:0;margin-left:3px;transition:opacity .12s;}
+.ptag:not(.ptag-head):hover .edit-pen{opacity:.6;}
+/* Phone tooltip */
+.phone-tip{display:none;position:absolute;bottom:calc(100% + 5px);left:50%;
+  transform:translateX(-50%);background:var(--ink);color:#fff;font-size:11px;
+  font-weight:500;padding:4px 10px;border-radius:6px;white-space:nowrap;
+  pointer-events:none;z-index:500;}
+.phone-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:4px solid transparent;border-top-color:var(--ink);}
+.ptag:hover .phone-tip{display:block;}
+
+/* ADD BUTTON */
+.add-btn{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;
+  padding:3px 9px;border-radius:18px;border:1.5px dashed var(--sage);color:var(--moss);
+  background:transparent;cursor:pointer;font-family:inherit;transition:.14s;}
+.add-btn:hover{background:var(--se-bg);border-color:var(--se);}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.42);
+  z-index:1000;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--paper);border-radius:14px;width:100%;max-width:460px;
+  box-shadow:0 24px 64px rgba(0,0,0,.28);overflow:hidden;
+  animation:pop .17s ease;}
+@keyframes pop{from{transform:scale(.93);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-header{padding:18px 22px 14px;border-bottom:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:space-between;}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--forest);}
+.modal-x{width:28px;height:28px;border-radius:50%;border:none;background:var(--cream);
+  cursor:pointer;font-size:15px;color:var(--mid);display:flex;align-items:center;
+  justify-content:center;flex-shrink:0;}
+.modal-x:hover{background:var(--rule);}
+.modal-body{padding:18px 22px 6px;}
+.modal-footer{display:flex;gap:8px;justify-content:flex-end;padding:14px 22px;
+  border-top:1px solid var(--rule);background:var(--cream);}
+.form-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  color:var(--soft);margin-bottom:6px;display:block;}
+.form-input{width:100%;padding:9px 12px;border:1.5px solid var(--rule);border-radius:8px;
+  font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--paper);
+  outline:none;transition:.14s;margin-bottom:14px;}
+.form-input:focus{border-color:var(--moss);box-shadow:0 0 0 3px rgba(74,122,82,.1);}
+.form-select{-webkit-appearance:none;appearance:none;}
+.person-picker{max-height:220px;overflow-y:auto;border:1.5px solid var(--rule);
+  border-radius:8px;margin-bottom:14px;}
+.picker-search{padding:8px 10px;border-bottom:1px solid var(--rule);
+  position:sticky;top:0;background:var(--paper);z-index:1;}
+.picker-search input{width:100%;border:1.5px solid var(--rule);border-radius:6px;
+  padding:7px 10px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;}
+.picker-search input:focus{border-color:var(--moss);}
+.picker-item{padding:9px 13px;cursor:pointer;font-size:13px;border-bottom:1px solid var(--rule);
+  display:flex;align-items:center;gap:8px;transition:background .1s;}
+.picker-item:last-child{border-bottom:none;}
+.picker-item:hover,.picker-item.selected{background:var(--se-bg);}
+.picker-item.selected{font-weight:600;}
+.picker-badge{font-size:10px;padding:1px 6px;border-radius:8px;font-weight:600;flex-shrink:0;}
+.pb-head{background:var(--forest);color:#fff;}
+.pb-parent{background:var(--se-bg);color:var(--se);border:1px solid var(--se-b);}
+.pb-vol{background:var(--so-bg);color:var(--so);border:1px solid var(--so-b);}
+.divider{display:flex;align-items:center;gap:10px;margin:8px 0 12px;
+  font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--soft);}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--rule);}
+.btn{padding:9px 20px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;
+  font-weight:600;border:none;cursor:pointer;transition:.14s;}
+.btn-cancel{background:var(--rule);color:var(--mid);}
+.btn-cancel:hover{background:#d8d3cb;}
+.btn-save{background:var(--forest);color:#fff;}
+.btn-save:hover{background:var(--moss);}
+.btn-remove{background:#e05555;color:#fff;}
+.btn-remove:hover{background:#c44;}
+
+/* DIRECTORY */
+.dir-section-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;
+  color:var(--forest);margin-bottom:5px;margin-top:32px;}
+.dir-section-title:first-child{margin-top:0;}
+.dir-desc{font-size:13px;color:var(--mid);margin-bottom:16px;line-height:1.6;}
+.dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));
+  gap:13px;margin-bottom:16px;}
+.dir-card{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);
+  overflow:hidden;box-shadow:var(--sh);transition:transform .12s,box-shadow .12s;}
+.dir-card:hover{transform:translateY(-2px);box-shadow:var(--shl);}
+.dir-card.head-card{border-left:4px solid var(--forest);}
+.dir-card-body{padding:14px 16px;}
+.dir-name-row{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;
+  margin-bottom:4px;}
+.dir-name-row input{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;
+  border:none;outline:none;background:transparent;color:var(--ink);width:100%;}
+.dir-name-row input:focus{background:var(--se-bg);border-radius:4px;padding:1px 4px;}
+.dir-phone-row{font-size:13px;color:var(--moss);font-weight:500;margin-bottom:9px;
+  display:flex;align-items:center;gap:5px;}
+.dir-phone-row input{font-size:13px;color:var(--moss);font-weight:500;border:none;
+  outline:none;background:transparent;flex:1;}
+.dir-phone-row input:focus{background:var(--se-bg);border-radius:4px;padding:1px 4px;color:var(--ink);}
+.dir-badges{display:flex;flex-wrap:wrap;gap:5px;}
+.dir-card-footer{padding:7px 16px;border-top:1px solid var(--rule);background:var(--cream);
+  display:flex;justify-content:space-between;align-items:center;}
+.dir-footer-hint{font-size:11px;color:var(--soft);}
+.del-btn{font-size:13px;cursor:pointer;color:var(--soft);background:none;border:none;
+  padding:3px 5px;border-radius:4px;transition:.12s;}
+.del-btn:hover{color:#e05555;background:#fef2f2;}
+.add-card-btn{display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:16px;background:var(--paper);border:2px dashed var(--sage);
+  border-radius:var(--r);cursor:pointer;color:var(--moss);font-size:14px;
+  font-weight:600;font-family:'DM Sans',sans-serif;width:100%;transition:.14s;}
+.add-card-btn:hover{background:var(--se-bg);border-color:var(--se);}
+.start-badge{font-size:10px;font-weight:600;color:var(--sp);background:var(--sp-bg);
+  padding:1px 7px;border-radius:9px;margin-left:7px;vertical-align:middle;}
+.role-badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;
+  padding:2px 8px;border-radius:10px;}
+.rb-head{background:var(--forest);color:#fff;}
+.rb-parent{background:var(--se-bg);color:var(--se);border:1px solid var(--se-b);}
+.rb-vol{background:var(--so-bg);color:var(--so);border:1px solid var(--so-b);}
+.grp-badge{font-size:10px;font-weight:600;padding:2px 7px;border-radius:9px;
+  border:1px solid transparent;cursor:pointer;transition:.12s;}
+.grp-seeds{background:var(--se-bg);color:var(--se);border-color:var(--se-b);}
+.grp-sow{background:var(--so-bg);color:var(--so);border-color:var(--so-b);}
+.grp-sprouts{background:var(--sp-bg);color:var(--sp);border-color:var(--sp-b);}
+.grp-badge.off{opacity:.28;filter:grayscale(.5);}
+/* group picker for new person */
+.grp-pick-btn{font-size:13px;font-weight:600;padding:7px 16px;border-radius:9px;
+  border:1px solid transparent;cursor:pointer;font-family:inherit;transition:.14s;}
+
+/* COUPLES */
+.couple-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px;}
+.couple-card{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r);
+  box-shadow:var(--sh);overflow:hidden;}
+.couple-head{padding:15px 17px;border-bottom:1px solid var(--rule);}
+.couple-names{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;margin-bottom:4px;}
+.couple-amp{color:var(--soft);margin:0 5px;}
+.couple-phones{font-size:12px;color:var(--moss);}
+.rotation-table{width:100%;border-collapse:collapse;font-size:12px;}
+.rotation-table th{background:rgba(74,122,82,.06);color:var(--forest);font-size:10px;
+  font-weight:700;text-transform:uppercase;letter-spacing:.7px;padding:7px 14px;
+  text-align:left;border-bottom:1px solid var(--rule);}
+.rotation-table td{padding:6px 14px;border-bottom:1px solid var(--rule);}
+.rotation-table tr:last-child td{border-bottom:none;}
+.rot-month{font-weight:600;white-space:nowrap;}
+.rot-off{color:var(--soft);font-size:11px;}
+
+/* STATS */
+.stats-intro{font-size:13px;color:var(--mid);margin-bottom:20px;line-height:1.6;max-width:640px;}
+.stats-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--rule);box-shadow:var(--sh);}
+.stats-table{width:100%;border-collapse:collapse;background:var(--paper);font-size:13px;min-width:620px;}
+.stats-table thead tr{background:linear-gradient(135deg,var(--forest),var(--moss));}
+.stats-table th{color:#fff;font-size:10.5px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.7px;padding:11px 13px;text-align:left;}
+.stats-table th.num,.stats-table td.num{text-align:center;}
+.stats-table tbody tr{border-bottom:1px solid var(--rule);}
+.stats-table tbody tr:last-child{border-bottom:none;}
+.stats-table tbody tr:hover{background:rgba(74,122,82,.03);}
+.stats-table td{padding:9px 13px;vertical-align:middle;}
+.stat-num{font-weight:700;color:var(--forest);}
+
+/* TOAST */
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(70px);
+  background:var(--forest);color:#fff;padding:10px 22px;border-radius:24px;font-size:13px;
+  font-weight:500;z-index:2000;transition:transform .22s;box-shadow:var(--shl);pointer-events:none;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+footer{background:var(--forest);color:rgba(255,255,255,.6);text-align:center;padding:24px 20px;font-size:12px;}
+footer strong{color:#fff;}
+@media(max-width:600px){.hero{padding:42px 16px 54px;}.content{padding:22px 12px 60px;}}
+</style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span class="modal-title" id="modalTitle">Edit</span>
+      <button class="modal-x" id="modalClose">&#x2715;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer" id="modalFooter"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">✦ Children's Ministry 2026–2027</div>
+  <h1>Selah Ministry<br>Volunteer Schedule</h1>
+  <p class="hero-sub">April 12, 2026 — March 28, 2027 · Sunday Services</p>
+  <div class="hero-pills">
+    <span class="hero-pill">🌱 Selah Seeds · Ages 1–2</span>
+    <span class="hero-pill">🪴 Selah Sow · Ages 3–4</span>
+    <span class="hero-pill">🌳 Selah Sprouts · K–4th Grade</span>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="sticky-nav">
+  <div class="nav-inner" id="monthNav"><span class="nav-label">Jump to</span></div>
+</nav>
+
+<!-- TABS -->
+<div class="tabs-bar"><div class="tabs-inner">
+  <button class="tab-btn active" onclick="switchTab('schedule',this)">📅 Schedule</button>
+  <button class="tab-btn" onclick="switchTab('couples',this)">💑 Couples</button>
+  <button class="tab-btn" onclick="switchTab('directory',this)">👥 Directory</button>
+  <button class="tab-btn" onclick="switchTab('stats',this)">📊 Stats</button>
+</div></div>
+
+<main class="content">
+  <!-- SCHEDULE -->
+  <div id="tab-schedule" class="tab-panel active">
+    <div class="legend">
+      <span class="legend-label">Key</span>
+      <div class="legend-item"><span class="ptag ptag-head" style="pointer-events:none">Name</span>Head Teacher</div>
+      <div class="legend-item"><span class="ptag ptag-parent" style="pointer-events:none">Name</span>Parent</div>
+      <div class="legend-item"><span class="ptag ptag-vol" style="pointer-events:none">Name</span>Volunteer</div>
+      <div class="legend-item"><b class="off-badge off-diana">Diana Off</b>Seeds: 2 cover</div>
+      <div class="legend-item"><b class="off-badge off-faith">Faith Off</b>Sow: 2 cover</div>
+      <div class="legend-item"><b class="off-badge off-blair">Blair Off</b>Sprouts: 2 cover</div>
+      <div class="legend-item" style="color:var(--soft);font-size:12px">✏️ Click name to edit · Hover for phone</div>
+    </div>
+    <div id="scheduleContent"></div>
+  </div>
+  <!-- COUPLES -->
+  <div id="tab-couples" class="tab-panel">
+    <h3 class="dir-section-title" style="margin-top:0">Couple Rotation</h3>
+    <p class="dir-desc">Each couple alternates monthly — only one partner serves per month.</p>
+    <div class="couple-grid" id="couplesContent"></div>
+  </div>
+  <!-- DIRECTORY -->
+  <div id="tab-directory" class="tab-panel">
+    <div id="directoryContent"></div>
+  </div>
+  <!-- STATS -->
+  <div id="tab-stats" class="tab-panel">
+    <p class="stats-intro">Total Sundays served by classroom. Updates live as you make edits.</p>
+    <div class="stats-wrap"><table class="stats-table">
+      <thead><tr>
+        <th>Name</th><th>Phone</th><th>Role</th>
+        <th class="num">Total</th><th class="num">🌱</th><th class="num">🪴</th><th class="num">🌳</th>
+      </tr></thead>
+      <tbody id="statsBody"></tbody>
+    </table></div>
+  </div>
+</main>
+
+<footer>
+  <p><strong>Selah Children's Ministry</strong> · Volunteer Schedule 2026–2027 · 51 Sundays</p>
+  <p style="margin-top:5px">Click any name to edit · Changes auto-save · Hover names for phone · Ctrl+Shift+R to reset</p>
+</footer>
+
+<script>
+// ── DATA (injected by build script) ───────────────────────
+const ORIG_SCHEDULE   = [{"dateStr": "Sunday, April 12, 2026", "dateShort": "Apr 12, 2026", "monthKey": "2026-03", "monthLabel": "April 2026", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["Megan Kim", "Stephen"]}, "Sow": {"head": "Faith Wang", "staff": ["Peter Choi"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Josiah Bui"]}}, {"dateStr": "Sunday, April 19, 2026", "dateShort": "Apr 19, 2026", "monthKey": "2026-03", "monthLabel": "April 2026", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Lauren Yoon"]}, "Sow": {"head": null, "staff": ["Andrew Song", "Hae Mi Wang"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Josiah Bui"]}}, {"dateStr": "Sunday, April 26, 2026", "dateShort": "Apr 26, 2026", "monthKey": "2026-03", "monthLabel": "April 2026", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Lauren Yoon"]}, "Sow": {"head": "Faith Wang", "staff": ["Benji Suh"]}, "Sprouts": {"head": null, "staff": ["Andy Kim", "Hae Mi Wang"]}}, {"dateStr": "Sunday, May 3, 2026", "dateShort": "May 3, 2026", "monthKey": "2026-04", "monthLabel": "May 2026", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["Hae Mi Wang", "Stephen"]}, "Sow": {"head": "Faith Wang", "staff": ["Benji Suh"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Sarah Choi"]}}, {"dateStr": "Sunday, May 10, 2026", "dateShort": "May 10, 2026", "monthKey": "2026-04", "monthLabel": "May 2026", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Hae Mi Wang"]}, "Sow": {"head": null, "staff": ["Mimi Song", "Benji Suh"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Samuel Park"]}}, {"dateStr": "Sunday, May 17, 2026", "dateShort": "May 17, 2026", "monthKey": "2026-04", "monthLabel": "May 2026", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Christine Ku"]}, "Sow": {"head": "Faith Wang", "staff": ["Carol Kim"]}, "Sprouts": {"head": null, "staff": ["Samuel Park", "Stephen"]}}, {"dateStr": "Sunday, May 24, 2026", "dateShort": "May 24, 2026", "monthKey": "2026-04", "monthLabel": "May 2026", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Christine Ku"]}, "Sow": {"head": "Faith Wang", "staff": ["Stephen"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Hae Mi Wang"]}}, {"dateStr": "Sunday, May 31, 2026", "dateShort": "May 31, 2026", "monthKey": "2026-04", "monthLabel": "May 2026", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Ji Kim"]}, "Sow": {"head": "Faith Wang", "staff": ["Stephen"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Hae Mi Wang"]}}, {"dateStr": "Sunday, June 7, 2026", "dateShort": "Jun 7, 2026", "monthKey": "2026-05", "monthLabel": "June 2026", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["Lauren Yoon", "Christine Ku"]}, "Sow": {"head": "Faith Wang", "staff": ["Peter Choi"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Daniel Kim"]}}, {"dateStr": "Sunday, June 14, 2026", "dateShort": "Jun 14, 2026", "monthKey": "2026-05", "monthLabel": "June 2026", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Deborah Hwang"]}, "Sow": {"head": null, "staff": ["Andrew Song", "Hae Mi Wang"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Daniel Kim"]}}, {"dateStr": "Sunday, June 21, 2026", "dateShort": "Jun 21, 2026", "monthKey": "2026-05", "monthLabel": "June 2026", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Deborah Hwang"]}, "Sow": {"head": "Faith Wang", "staff": ["Andy Kim"]}, "Sprouts": {"head": null, "staff": ["Stephen", "Benji Suh"]}}, {"dateStr": "Sunday, June 28, 2026", "dateShort": "Jun 28, 2026", "monthKey": "2026-05", "monthLabel": "June 2026", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Deborah Hwang"]}, "Sow": {"head": "Faith Wang", "staff": ["Megan Kim"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Stephen"]}}, {"dateStr": "Sunday, July 5, 2026", "dateShort": "Jul 5, 2026", "monthKey": "2026-06", "monthLabel": "July 2026", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["Stephen", "Lauren Yoon"]}, "Sow": {"head": "Faith Wang", "staff": ["Sarah Choi"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Hae Mi Wang"]}}, {"dateStr": "Sunday, July 12, 2026", "dateShort": "Jul 12, 2026", "monthKey": "2026-06", "monthLabel": "July 2026", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Christine Ku"]}, "Sow": {"head": null, "staff": ["Mimi Song", "Deborah Hwang"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Josiah Bui"]}}, {"dateStr": "Sunday, July 19, 2026", "dateShort": "Jul 19, 2026", "monthKey": "2026-06", "monthLabel": "July 2026", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Carol Kim"]}, "Sow": {"head": "Faith Wang", "staff": ["Lauren Yoon"]}, "Sprouts": {"head": null, "staff": ["Josiah Bui", "Benji Suh"]}}, {"dateStr": "Sunday, July 26, 2026", "dateShort": "Jul 26, 2026", "monthKey": "2026-06", "monthLabel": "July 2026", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Ji Kim"]}, "Sow": {"head": "Faith Wang", "staff": ["Lauren Yoon"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Benji Suh"]}}, {"dateStr": "Sunday, August 2, 2026", "dateShort": "Aug 2, 2026", "monthKey": "2026-07", "monthLabel": "August 2026", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["Deborah Hwang", "Stephen"]}, "Sow": {"head": "Faith Wang", "staff": ["Hae Mi Wang"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Benji Suh"]}}, {"dateStr": "Sunday, August 9, 2026", "dateShort": "Aug 9, 2026", "monthKey": "2026-07", "monthLabel": "August 2026", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Lauren Yoon"]}, "Sow": {"head": null, "staff": ["Hae Mi Wang", "Peter Choi"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Samuel Park"]}}, {"dateStr": "Sunday, August 16, 2026", "dateShort": "Aug 16, 2026", "monthKey": "2026-07", "monthLabel": "August 2026", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Andy Kim"]}, "Sow": {"head": "Faith Wang", "staff": ["Christine Ku"]}, "Sprouts": {"head": null, "staff": ["Samuel Park", "Andrew Song"]}}, {"dateStr": "Sunday, August 23, 2026", "dateShort": "Aug 23, 2026", "monthKey": "2026-07", "monthLabel": "August 2026", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Megan Kim"]}, "Sow": {"head": "Faith Wang", "staff": ["Christine Ku"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Stephen"]}}, {"dateStr": "Sunday, August 30, 2026", "dateShort": "Aug 30, 2026", "monthKey": "2026-07", "monthLabel": "August 2026", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Hae Mi Wang"]}, "Sow": {"head": "Faith Wang", "staff": ["Christine Ku"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Stephen"]}}, {"dateStr": "Sunday, September 6, 2026", "dateShort": "Sep 6, 2026", "monthKey": "2026-08", "monthLabel": "September 2026", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["Christine Ku", "Deborah Hwang"]}, "Sow": {"head": "Faith Wang", "staff": ["Sarah Choi"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Daniel Kim"]}}, {"dateStr": "Sunday, September 13, 2026", "dateShort": "Sep 13, 2026", "monthKey": "2026-08", "monthLabel": "September 2026", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Stephen"]}, "Sow": {"head": null, "staff": ["Deborah Hwang", "Mimi Song"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Daniel Kim"]}}, {"dateStr": "Sunday, September 20, 2026", "dateShort": "Sep 20, 2026", "monthKey": "2026-08", "monthLabel": "September 2026", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Hae Mi Wang"]}, "Sow": {"head": "Faith Wang", "staff": ["Deborah Hwang"]}, "Sprouts": {"head": null, "staff": ["Carol Kim", "Stephen"]}}, {"dateStr": "Sunday, September 27, 2026", "dateShort": "Sep 27, 2026", "monthKey": "2026-08", "monthLabel": "September 2026", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Lauren Yoon"]}, "Sow": {"head": "Faith Wang", "staff": ["Ji Kim"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Hae Mi Wang"]}}, {"dateStr": "Sunday, October 4, 2026", "dateShort": "Oct 4, 2026", "monthKey": "2026-09", "monthLabel": "October 2026", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["Christine Ku", "Deborah Hwang"]}, "Sow": {"head": "Faith Wang", "staff": ["Megan Kim"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Peter Choi"]}}, {"dateStr": "Sunday, October 11, 2026", "dateShort": "Oct 11, 2026", "monthKey": "2026-09", "monthLabel": "October 2026", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Stephen"]}, "Sow": {"head": null, "staff": ["Andrew Song", "Lauren Yoon"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Josiah Bui"]}}, {"dateStr": "Sunday, October 18, 2026", "dateShort": "Oct 18, 2026", "monthKey": "2026-09", "monthLabel": "October 2026", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Lauren Yoon"]}, "Sow": {"head": "Faith Wang", "staff": ["Andy Kim"]}, "Sprouts": {"head": null, "staff": ["Josiah Bui", "Benji Suh"]}}, {"dateStr": "Sunday, October 25, 2026", "dateShort": "Oct 25, 2026", "monthKey": "2026-09", "monthLabel": "October 2026", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Lauren Yoon"]}, "Sow": {"head": "Faith Wang", "staff": ["Benji Suh"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Hae Mi Wang"]}}, {"dateStr": "Sunday, November 1, 2026", "dateShort": "Nov 1, 2026", "monthKey": "2026-10", "monthLabel": "November 2026", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["Lauren Yoon", "Christine Ku"]}, "Sow": {"head": "Faith Wang", "staff": ["Benji Suh"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Hae Mi Wang"]}}, {"dateStr": "Sunday, November 8, 2026", "dateShort": "Nov 8, 2026", "monthKey": "2026-10", "monthLabel": "November 2026", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Hae Mi Wang"]}, "Sow": {"head": null, "staff": ["Sarah Choi", "Mimi Song"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Samuel Park"]}}, {"dateStr": "Sunday, November 15, 2026", "dateShort": "Nov 15, 2026", "monthKey": "2026-10", "monthLabel": "November 2026", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Christine Ku"]}, "Sow": {"head": "Faith Wang", "staff": ["Carol Kim"]}, "Sprouts": {"head": null, "staff": ["Samuel Park", "Stephen"]}}, {"dateStr": "Sunday, November 22, 2026", "dateShort": "Nov 22, 2026", "monthKey": "2026-10", "monthLabel": "November 2026", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Christine Ku"]}, "Sow": {"head": "Faith Wang", "staff": ["Stephen"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Benji Suh"]}}, {"dateStr": "Sunday, November 29, 2026", "dateShort": "Nov 29, 2026", "monthKey": "2026-10", "monthLabel": "November 2026", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Ji Kim"]}, "Sow": {"head": "Faith Wang", "staff": ["Stephen"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Hae Mi Wang"]}}, {"dateStr": "Sunday, December 6, 2026", "dateShort": "Dec 6, 2026", "monthKey": "2026-11", "monthLabel": "December 2026", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["Hae Mi Wang", "Deborah Hwang"]}, "Sow": {"head": "Faith Wang", "staff": ["Peter Choi"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Daniel Kim"]}}, {"dateStr": "Sunday, December 13, 2026", "dateShort": "Dec 13, 2026", "monthKey": "2026-11", "monthLabel": "December 2026", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Deborah Hwang"]}, "Sow": {"head": null, "staff": ["Andrew Song", "Stephen"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Daniel Kim"]}}, {"dateStr": "Sunday, December 20, 2026", "dateShort": "Dec 20, 2026", "monthKey": "2026-11", "monthLabel": "December 2026", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Deborah Hwang"]}, "Sow": {"head": "Faith Wang", "staff": ["Hae Mi Wang"]}, "Sprouts": {"head": null, "staff": ["Andy Kim", "Stephen"]}}, {"dateStr": "Sunday, December 27, 2026", "dateShort": "Dec 27, 2026", "monthKey": "2026-11", "monthLabel": "December 2026", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Megan Kim"]}, "Sow": {"head": "Faith Wang", "staff": ["Benji Suh"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Josiah Bui"]}}, {"dateStr": "Sunday, January 3, 2027", "dateShort": "Jan 3, 2027", "monthKey": "2027-00", "monthLabel": "January 2027", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["David Kim", "Carol Kim"]}, "Sow": {"head": "Faith Wang", "staff": ["Ji Kim"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Samuel Park"]}}, {"dateStr": "Sunday, January 10, 2027", "dateShort": "Jan 10, 2027", "monthKey": "2027-00", "monthLabel": "January 2027", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Tiffany Kim"]}, "Sow": {"head": null, "staff": ["Lauren Yoon", "Christine Ku"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Josiah Bui"]}}, {"dateStr": "Sunday, January 17, 2027", "dateShort": "Jan 17, 2027", "monthKey": "2027-00", "monthLabel": "January 2027", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Stephen"]}, "Sow": {"head": "Faith Wang", "staff": ["Lauren Yoon"]}, "Sprouts": {"head": null, "staff": ["Josiah Bui", "Sarah Choi"]}}, {"dateStr": "Sunday, January 24, 2027", "dateShort": "Jan 24, 2027", "monthKey": "2027-00", "monthLabel": "January 2027", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Hae Mi Wang"]}, "Sow": {"head": "Faith Wang", "staff": ["Lauren Yoon"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Benji Suh"]}}, {"dateStr": "Sunday, January 31, 2027", "dateShort": "Jan 31, 2027", "monthKey": "2027-00", "monthLabel": "January 2027", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Hae Mi Wang"]}, "Sow": {"head": "Faith Wang", "staff": ["Mimi Song"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Benji Suh"]}}, {"dateStr": "Sunday, February 7, 2027", "dateShort": "Feb 7, 2027", "monthKey": "2027-01", "monthLabel": "February 2027", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["Hae Mi Wang", "Jihee Kim"]}, "Sow": {"head": "Faith Wang", "staff": ["Andy Kim"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Samuel Park"]}}, {"dateStr": "Sunday, February 14, 2027", "dateShort": "Feb 14, 2027", "monthKey": "2027-01", "monthLabel": "February 2027", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Patrick Kim"]}, "Sow": {"head": null, "staff": ["Christine Ku", "Megan Kim"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Samuel Park"]}}, {"dateStr": "Sunday, February 21, 2027", "dateShort": "Feb 21, 2027", "monthKey": "2027-01", "monthLabel": "February 2027", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Stephen"]}, "Sow": {"head": "Faith Wang", "staff": ["Christine Ku"]}, "Sprouts": {"head": null, "staff": ["Peter Choi", "Daniel Kim"]}}, {"dateStr": "Sunday, February 28, 2027", "dateShort": "Feb 28, 2027", "monthKey": "2027-01", "monthLabel": "February 2027", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Stephen"]}, "Sow": {"head": "Faith Wang", "staff": ["Deborah Hwang"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Andrew Song"]}}, {"dateStr": "Sunday, March 7, 2027", "dateShort": "Mar 7, 2027", "monthKey": "2027-02", "monthLabel": "March 2027", "dianaOff": true, "faithOff": false, "blairOff": false, "Seeds": {"head": null, "staff": ["Carol Kim", "Lauren Yoon"]}, "Sow": {"head": "Faith Wang", "staff": ["David Kim"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Daniel Kim"]}}, {"dateStr": "Sunday, March 14, 2027", "dateShort": "Mar 14, 2027", "monthKey": "2027-02", "monthLabel": "March 2027", "dianaOff": false, "faithOff": true, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Ji Kim"]}, "Sow": {"head": null, "staff": ["Deborah Hwang", "Tiffany Kim"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Daniel Kim"]}}, {"dateStr": "Sunday, March 21, 2027", "dateShort": "Mar 21, 2027", "monthKey": "2027-02", "monthLabel": "March 2027", "dianaOff": false, "faithOff": false, "blairOff": true, "Seeds": {"head": "Diana Jang", "staff": ["Christine Ku"]}, "Sow": {"head": "Faith Wang", "staff": ["Deborah Hwang"]}, "Sprouts": {"head": null, "staff": ["Sarah Choi", "Benji Suh"]}}, {"dateStr": "Sunday, March 28, 2027", "dateShort": "Mar 28, 2027", "monthKey": "2027-02", "monthLabel": "March 2027", "dianaOff": false, "faithOff": false, "blairOff": false, "Seeds": {"head": "Diana Jang", "staff": ["Deborah Hwang"]}, "Sow": {"head": "Faith Wang", "staff": ["Stephen"]}, "Sprouts": {"head": "Blair Kim", "staff": ["Mimi Song"]}}];
+const ORIG_VOLUNTEERS = [{"name": "Peter Choi", "phone": "706-726-1261", "type": "parent", "groups": ["Sow", "Sprouts"], "start": null, "couple": "PeterSarah"}, {"name": "Sarah Choi", "phone": "770-820-9547", "type": "parent", "groups": ["Sow", "Sprouts"], "start": null, "couple": "PeterSarah"}, {"name": "Andrew Song", "phone": "847-691-0722", "type": "parent", "groups": ["Sow", "Sprouts"], "start": null, "couple": "AndrewMimi"}, {"name": "Mimi Song", "phone": "678-793-0089", "type": "parent", "groups": ["Sow", "Sprouts"], "start": null, "couple": "AndrewMimi"}, {"name": "Andy Kim", "phone": "478-213-7643", "type": "parent", "groups": ["Seeds", "Sow", "Sprouts"], "start": null, "couple": "AndyCarol"}, {"name": "Carol Kim", "phone": "404-951-9793", "type": "parent", "groups": ["Seeds", "Sow", "Sprouts"], "start": null, "couple": "AndyCarol"}, {"name": "Ji Kim", "phone": "845-664-4898", "type": "parent", "groups": ["Seeds", "Sow"], "start": null, "couple": "JiMegan"}, {"name": "Megan Kim", "phone": "626-807-8225", "type": "parent", "groups": ["Seeds", "Sow"], "start": null, "couple": "JiMegan"}, {"name": "David Kim", "phone": "678-622-7555", "type": "parent", "groups": ["Seeds", "Sow", "Sprouts"], "start": "2027-00", "couple": "DavidJihee"}, {"name": "Jihee Kim", "phone": "678-622-7555", "type": "parent", "groups": ["Seeds", "Sow", "Sprouts"], "start": "2027-00", "couple": "DavidJihee"}, {"name": "Tiffany Kim", "phone": "TBD", "type": "parent", "groups": ["Seeds", "Sow", "Sprouts"], "start": "2027-00", "couple": "TiffanyPatrick"}, {"name": "Patrick Kim", "phone": "678-799-1261", "type": "parent", "groups": ["Seeds", "Sow", "Sprouts"], "start": "2027-00", "couple": "TiffanyPatrick"}, {"name": "Diana Jang", "phone": "478-390-3809", "type": "head", "groups": ["Seeds", "Sow"], "room": "Seeds", "start": null, "couple": null}, {"name": "Faith Wang", "phone": "404-312-2843", "type": "head", "groups": ["Seeds", "Sow", "Sprouts"], "room": "Sow", "start": null, "couple": null}, {"name": "Blair Kim", "phone": "TBD", "type": "head", "groups": ["Sprouts", "Sow", "Seeds"], "room": "Sprouts", "start": null, "couple": null}, {"name": "Benji Suh", "phone": "770-882-9357", "type": "volunteer", "groups": ["Sow", "Sprouts"], "start": null, "couple": null}, {"name": "Lauren Yoon", "phone": "845-492-7330", "type": "volunteer", "groups": ["Seeds", "Sow"], "start": null, "couple": null}, {"name": "Christine Ku", "phone": "917-375-9596", "type": "volunteer", "groups": ["Seeds", "Sow"], "start": null, "couple": null}, {"name": "Josiah Bui", "phone": "770-616-6199", "type": "volunteer", "groups": ["Sprouts"], "start": null, "couple": null}, {"name": "Samuel Park", "phone": "470-753-3002", "type": "volunteer", "groups": ["Sprouts"], "start": null, "couple": null}, {"name": "Stephen", "phone": "865-242-5282", "type": "volunteer", "groups": ["Seeds", "Sow", "Sprouts"], "start": null, "couple": null}, {"name": "Daniel Kim", "phone": "470-772-8993", "type": "volunteer", "groups": ["Sprouts"], "start": null, "couple": null}, {"name": "Deborah Hwang", "phone": "770-807-5196", "type": "volunteer", "groups": ["Seeds", "Sow"], "start": null, "couple": null}, {"name": "Hae Mi Wang", "phone": "678-662-2934", "type": "volunteer", "groups": ["Seeds", "Sow", "Sprouts"], "start": null, "couple": null}];
+const COUPLES         = [{"id": "PeterSarah", "members": ["Peter Choi", "Sarah Choi"], "start": null, "offset": 0}, {"id": "AndrewMimi", "members": ["Andrew Song", "Mimi Song"], "start": null, "offset": 0}, {"id": "AndyCarol", "members": ["Andy Kim", "Carol Kim"], "start": null, "offset": 0}, {"id": "JiMegan", "members": ["Megan Kim", "Ji Kim"], "start": null, "offset": 0}, {"id": "DavidJihee", "members": ["David Kim", "Jihee Kim"], "start": "2027-00", "offset": 0}, {"id": "TiffanyPatrick", "members": ["Tiffany Kim", "Patrick Kim"], "start": "2027-00", "offset": 0}];
+const ORIG_CMA        = {"PeterSarah": {"2026-03": "Peter Choi", "2026-04": "Sarah Choi", "2026-05": "Peter Choi", "2026-06": "Sarah Choi", "2026-07": "Peter Choi", "2026-08": "Sarah Choi", "2026-09": "Peter Choi", "2026-10": "Sarah Choi", "2026-11": "Peter Choi", "2027-00": "Sarah Choi", "2027-01": "Peter Choi", "2027-02": "Sarah Choi"}, "AndrewMimi": {"2026-03": "Andrew Song", "2026-04": "Mimi Song", "2026-05": "Andrew Song", "2026-06": "Mimi Song", "2026-07": "Andrew Song", "2026-08": "Mimi Song", "2026-09": "Andrew Song", "2026-10": "Mimi Song", "2026-11": "Andrew Song", "2027-00": "Mimi Song", "2027-01": "Andrew Song", "2027-02": "Mimi Song"}, "AndyCarol": {"2026-03": "Andy Kim", "2026-04": "Carol Kim", "2026-05": "Andy Kim", "2026-06": "Carol Kim", "2026-07": "Andy Kim", "2026-08": "Carol Kim", "2026-09": "Andy Kim", "2026-10": "Carol Kim", "2026-11": "Andy Kim", "2027-00": "Carol Kim", "2027-01": "Andy Kim", "2027-02": "Carol Kim"}, "JiMegan": {"2026-03": "Megan Kim", "2026-04": "Ji Kim", "2026-05": "Megan Kim", "2026-06": "Ji Kim", "2026-07": "Megan Kim", "2026-08": "Ji Kim", "2026-09": "Megan Kim", "2026-10": "Ji Kim", "2026-11": "Megan Kim", "2027-00": "Ji Kim", "2027-01": "Megan Kim", "2027-02": "Ji Kim"}, "DavidJihee": {"2027-00": "David Kim", "2027-01": "Jihee Kim", "2027-02": "David Kim"}, "TiffanyPatrick": {"2027-00": "Tiffany Kim", "2027-01": "Patrick Kim", "2027-02": "Tiffany Kim"}};
+
+// ── STATE ─────────────────────────────────────────────────
+var S, V, CMA; // schedule, volunteers, coupleMonthAssignments
+
+function loadState() {
+  try {
+    S   = JSON.parse(localStorage.getItem('ss') || 'null') || JSON.parse(JSON.stringify(ORIG_SCHEDULE));
+    V   = JSON.parse(localStorage.getItem('sv') || 'null') || JSON.parse(JSON.stringify(ORIG_VOLUNTEERS));
+    CMA = JSON.parse(localStorage.getItem('sc') || 'null') || JSON.parse(JSON.stringify(ORIG_CMA));
+  } catch(e) {
+    S = JSON.parse(JSON.stringify(ORIG_SCHEDULE));
+    V = JSON.parse(JSON.stringify(ORIG_VOLUNTEERS));
+    CMA = JSON.parse(JSON.stringify(ORIG_CMA));
+  }
+}
+function save() {
+  try {
+    localStorage.setItem('ss', JSON.stringify(S));
+    localStorage.setItem('sv', JSON.stringify(V));
+    localStorage.setItem('sc', JSON.stringify(CMA));
+  } catch(e) {}
+}
+
+// ── UTILS ─────────────────────────────────────────────────
+function volFor(name) {
+  return V.find(function(v){ return v.name === name; }) || {name:name,type:'unknown',groups:[],phone:''};
+}
+function tagClass(type) {
+  return type === 'head' ? 'ptag-head' : type === 'parent' ? 'ptag-parent' : type === 'volunteer' ? 'ptag-vol' : 'ptag-custom';
+}
+function roleLabel(type) {
+  return type === 'head' ? 'Head' : type === 'parent' ? 'Parent' : type === 'volunteer' ? 'Vol' : 'Custom';
+}
+function rolePBadge(type) {
+  return type === 'head' ? 'pb-head' : type === 'parent' ? 'pb-parent' : 'pb-vol';
+}
+function xe(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function toast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._t); t._t = setTimeout(function(){ t.classList.remove('show'); }, 2000);
+}
+
+// ── MODAL ─────────────────────────────────────────────────
+document.getElementById('modalClose').onclick = closeModal;
+document.getElementById('modalOverlay').onclick = function(e) {
+  if (e.target === this) closeModal();
+};
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+  if (e.ctrlKey && e.shiftKey && e.key === 'R') {
+    if (confirm('Reset all changes to the original schedule?')) {
+      localStorage.removeItem('ss'); localStorage.removeItem('sv'); localStorage.removeItem('sc');
+      location.reload();
+    }
+  }
+});
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  selectedName = null;
+}
+function openModal(title, body, footer) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalBody').innerHTML = body;
+  document.getElementById('modalFooter').innerHTML = footer;
+  document.getElementById('modalOverlay').classList.add('open');
+  var si = document.querySelector('#modalBody .picker-search input');
+  if (si) setTimeout(function(){ si.focus(); }, 50);
+}
+
+// ── PERSON PICKER ─────────────────────────────────────────
+var selectedName = null;
+
+function buildPicker(listId, current) {
+  selectedName = current || null;
+  var items = V.map(function(v) {
+    var sel = v.name === current ? ' selected' : '';
+    var bc = rolePBadge(v.type);
+    return '<div class="picker-item' + sel + '" data-n="' + xe(v.name) + '">'
+      + '<span class="picker-badge ' + bc + '">' + roleLabel(v.type) + '</span>'
+      + '<span>' + xe(v.name) + '</span>'
+      + '<span style="font-size:11px;color:var(--soft);margin-left:auto">' + xe(v.phone||'') + '</span>'
+      + '</div>';
+  }).join('');
+  return '<div class="person-picker">'
+    + '<div class="picker-search"><input type="text" placeholder="Search…" '
+    + 'oninput="filterPicker(this.value,\'' + listId + '\')" autocomplete="off"></div>'
+    + '<div id="' + listId + '">' + items + '</div></div>';
+}
+
+function initPicker(listId) {
+  var el = document.getElementById(listId);
+  if (!el) return;
+  el.addEventListener('click', function(e) {
+    var item = e.target.closest('.picker-item');
+    if (!item) return;
+    el.querySelectorAll('.picker-item').forEach(function(i){ i.classList.remove('selected'); });
+    item.classList.add('selected');
+    selectedName = item.getAttribute('data-n');
+    var ci = document.getElementById('customInput');
+    if (ci) ci.value = '';
+  });
+}
+
+function filterPicker(q, listId) {
+  var el = document.getElementById(listId);
+  if (!el) return;
+  el.querySelectorAll('.picker-item').forEach(function(item) {
+    var n = item.querySelector('span:nth-child(2)').textContent;
+    item.style.display = n.toLowerCase().indexOf(q.toLowerCase()) >= 0 ? '' : 'none';
+  });
+}
+
+function pickedName() {
+  var ci = document.getElementById('customInput');
+  if (ci && ci.value.trim()) return ci.value.trim();
+  return selectedName;
+}
+
+// ── EDIT EXISTING NAME ────────────────────────────────────
+function editName(wi, group, idx) {
+  var w = S[wi];
+  var cur = w[group].staff[idx];
+  var body = buildPicker('pick1', cur)
+    + '<div class="divider">or type custom</div>'
+    + '<input class="form-input" id="customInput" placeholder="Type any name…" style="margin-bottom:0">';
+  var footer = '<button class="btn btn-remove" id="mBtnRemove">Remove</button>'
+    + '<button class="btn btn-cancel" onclick="closeModal()">Cancel</button>'
+    + '<button class="btn btn-save" id="mBtnSave">Save</button>';
+  openModal('Edit: ' + w.dateShort + ' · ' + group, body, footer);
+  initPicker('pick1');
+  document.getElementById('mBtnSave').onclick = function() {
+    var n = pickedName(); if (!n) { toast('Select or type a name'); return; }
+    S[wi][group].staff[idx] = n;
+    closeModal(); save(); drawSchedule(); drawStats(); toast('✓ Saved');
+  };
+  document.getElementById('mBtnRemove').onclick = function() {
+    S[wi][group].staff.splice(idx, 1);
+    closeModal(); save(); drawSchedule(); drawStats(); toast('✓ Removed');
+  };
+}
+
+// ── ADD NAME ──────────────────────────────────────────────
+function addName(wi, group) {
+  var w = S[wi];
+  var body = '<label class="form-label">Add to ' + group + ' on ' + w.dateShort + '</label>'
+    + buildPicker('pick2', null)
+    + '<div class="divider">or type custom</div>'
+    + '<input class="form-input" id="customInput" placeholder="Type any name…" style="margin-bottom:0">';
+  var footer = '<button class="btn btn-cancel" onclick="closeModal()">Cancel</button>'
+    + '<button class="btn btn-save" id="mBtnAdd">Add</button>';
+  openModal('Add Person', body, footer);
+  initPicker('pick2');
+  document.getElementById('mBtnAdd').onclick = function() {
+    var n = pickedName(); if (!n) { toast('Select or type a name'); return; }
+    S[wi][group].staff.push(n);
+    closeModal(); save(); drawSchedule(); drawStats(); toast('✓ Added ' + n);
+  };
+}
+
+// ── SCHEDULE RENDER ───────────────────────────────────────
+function makeTag(name, wi, group, idx) {
+  var v = volFor(name);
+  var cls = tagClass(v.type);
+  var ph = v.phone || 'TBD';
+  // Use data attributes — zero inline JS string arg issues
+  return '<button class="ptag ' + cls + '" data-wi="' + wi
+    + '" data-g="' + group + '" data-i="' + idx + '" title="' + xe(ph) + '">'
+    + xe(name) + '<span class="edit-pen">✏</span>'
+    + '<span class="phone-tip">' + xe(ph) + '</span>'
+    + '</button>';
+}
+
+function makeHeadTag(name) {
+  var v = volFor(name);
+  var ph = v.phone || 'TBD';
+  return '<span class="ptag ptag-head" title="' + xe(ph) + '">'
+    + xe(name) + '<span class="phone-tip">' + xe(ph) + '</span></span>';
+}
+
+function drawSchedule() {
+  // Group by month
+  var months = {};
+  S.forEach(function(w) {
+    if (!months[w.monthLabel]) months[w.monthLabel] = [];
+    months[w.monthLabel].push(w);
+  });
+
+  // Nav links
+  var nav = document.getElementById('monthNav');
+  nav.innerHTML = '<span class="nav-label">Jump to</span>';
+  Object.keys(months).forEach(function(m) {
+    var id = 'mo-' + m.toLowerCase().replace(/\s+/g, '-').replace(/,/g, '');
+    var short = m.replace(' 2026',"'26").replace(' 2027',"'27");
+    var a = document.createElement('a');
+    a.className = 'nav-link'; a.href = '#' + id; a.textContent = short;
+    a.addEventListener('click', function(ev) {
+      ev.preventDefault();
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    nav.appendChild(a);
+  });
+
+  // Build HTML
+  var html = '';
+  Object.keys(months).forEach(function(month) {
+    var id = 'mo-' + month.toLowerCase().replace(/\s+/g, '-').replace(/,/g, '');
+    html += '<section class="month-section" id="' + id + '">'
+      + '<h2 class="month-heading"><span class="month-dot"></span>' + month + '</h2>'
+      + '<div class="table-wrap"><table class="sched-table"><thead><tr>'
+      + '<th class="th-date">Sunday</th>'
+      + '<th>🌱 Selah Seeds<em>Ages 1–2</em></th>'
+      + '<th>🪴 Selah Sow<em>Ages 3–4</em></th>'
+      + '<th>🌳 Selah Sprouts<em>K–4th Grade</em></th>'
+      + '</tr></thead><tbody>';
+
+    months[month].forEach(function(w) {
+      var wi = S.indexOf(w);
+      var rowCls = w.dianaOff ? 'row-doff' : w.faithOff ? 'row-foff' : w.blairOff ? 'row-boff' : '';
+      var badges = '';
+      if (w.dianaOff) badges += '<b class="off-badge off-diana">Diana Off</b>';
+      if (w.faithOff) badges += '<b class="off-badge off-faith">Faith Off</b>';
+      if (w.blairOff) badges += '<b class="off-badge off-blair">Blair Off</b>';
+
+      function cell(rd, g) {
+        var isOff = (g==='Seeds'&&w.dianaOff)||(g==='Sow'&&w.faithOff)||(g==='Sprouts'&&w.blairOff);
+        var headHtml = rd.head
+          ? '<div class="room-head-row">' + makeHeadTag(rd.head) + '</div>'
+          : '<div class="room-head-row"><span class="covering-note">★ '
+            + (g==='Seeds'?'Diana':g==='Sow'?'Faith':'Blair') + ' Off — 2 covering</span></div>';
+        var staffHtml = rd.staff.map(function(n,i){ return makeTag(n,wi,g,i); }).join('');
+        var addHtml = '<button class="add-btn" data-wi="' + wi + '" data-g="' + g + '">+ add</button>';
+        return '<div class="room-cell">' + headHtml
+          + '<div class="staff-row">' + (staffHtml||'<span class="empty-slot">—</span>') + addHtml
+          + '</div></div>';
+      }
+
+      html += '<tr class="' + rowCls + '">'
+        + '<td class="date-cell"><span class="date-text">' + w.dateShort + '</span>' + badges + '</td>'
+        + '<td>' + cell(w.Seeds,'Seeds') + '</td>'
+        + '<td>' + cell(w.Sow,'Sow') + '</td>'
+        + '<td>' + cell(w.Sprouts,'Sprouts') + '</td>'
+        + '</tr>';
+    });
+    html += '</tbody></table></div></section>';
+  });
+
+  var con = document.getElementById('scheduleContent');
+  con.innerHTML = html;
+
+  // ONE delegated listener for the whole schedule
+  con.addEventListener('click', function(e) {
+    // Edit: click on a non-head person button
+    var ptag = e.target.closest('button.ptag');
+    if (ptag) {
+      var wi = parseInt(ptag.getAttribute('data-wi'));
+      var g  = ptag.getAttribute('data-g');
+      var i  = parseInt(ptag.getAttribute('data-i'));
+      if (!isNaN(wi) && g && !isNaN(i)) { editName(wi, g, i); return; }
+    }
+    // Add slot button
+    var ab = e.target.closest('.add-btn');
+    if (ab) {
+      var wi = parseInt(ab.getAttribute('data-wi'));
+      var g  = ab.getAttribute('data-g');
+      if (!isNaN(wi) && g) addName(wi, g);
+    }
+  });
+}
+
+// ── DIRECTORY ─────────────────────────────────────────────
+function drawDirectory() {
+  var heads   = V.filter(function(v){ return v.type==='head'; });
+  var parents = V.filter(function(v){ return v.type==='parent'; });
+  var vols    = V.filter(function(v){ return v.type==='volunteer'; });
+
+  function sec(title, desc, people, addBtn) {
+    return '<h3 class="dir-section-title">' + title + '</h3>'
+      + '<p class="dir-desc">' + desc + '</p>'
+      + '<div class="dir-grid">' + people.map(makeCard).join('') + (addBtn||'') + '</div>';
+  }
+
+  document.getElementById('directoryContent').innerHTML =
+    sec('Head Teachers',
+      'Serve every week except their designated off Sunday. Click any field to edit.',
+      heads)
+    + sec('Parents',
+      'Couples alternate monthly. Click name or phone to edit. Click group badges to toggle.',
+      parents,
+      '<button class="add-card-btn" data-addtype="parent">＋ Add Parent</button>')
+    + sec('Volunteers',
+      'Serve in 2-week blocks where possible. Click any field to edit.',
+      vols,
+      '<button class="add-card-btn" data-addtype="volunteer">＋ Add Volunteer</button>');
+}
+
+function makeCard(v) {
+  var grps = ['Seeds','Sow','Sprouts'].map(function(g) {
+    var has = v.groups.indexOf(g) >= 0;
+    var icon = g==='Seeds'?'🌱':g==='Sow'?'🪴':'🌳';
+    return '<span class="grp-badge grp-' + g.toLowerCase() + (has?'':' off')
+      + '" data-person="' + xe(v.name) + '" data-grp="' + g + '">' + icon + ' ' + g + '</span>';
+  }).join('');
+  var rb = v.type==='head' ? '<span class="role-badge rb-head">★ Head</span>'
+         : v.type==='parent' ? '<span class="role-badge rb-parent">Parent</span>'
+         : '<span class="role-badge rb-vol">Volunteer</span>';
+  var sn = v.start ? '<span class="start-badge">Jan 2027+</span>' : '';
+  var del = v.type!=='head'
+    ? '<button class="del-btn" data-del="' + xe(v.name) + '">🗑</button>' : '';
+  return '<div class="dir-card' + (v.type==='head'?' head-card':'') + '">'
+    + '<div class="dir-card-body">'
+    + '<div class="dir-name-row"><input value="' + xe(v.name)
+    + '" data-orig="' + xe(v.name) + '" onchange="doRename(this)" onblur="doRename(this)">' + sn + '</div>'
+    + '<div class="dir-phone-row">📞<input value="' + xe(v.phone||'TBD')
+    + '" data-person="' + xe(v.name) + '" onchange="doPhone(this)" onblur="doPhone(this)"></div>'
+    + '<div class="dir-badges">' + rb + grps + '</div>'
+    + '</div>'
+    + '<div class="dir-card-footer"><span class="dir-footer-hint">Click to edit · Click groups to toggle</span>' + del + '</div>'
+    + '</div>';
+}
+
+// Directory event delegation
+document.addEventListener('click', function(e) {
+  // Group badge toggle
+  var gb = e.target.closest('.grp-badge[data-person]');
+  if (gb) { doToggleGroup(gb.getAttribute('data-person'), gb.getAttribute('data-grp')); return; }
+  // Delete
+  var db = e.target.closest('[data-del]');
+  if (db) { doDelete(db.getAttribute('data-del')); return; }
+  // Add person button
+  var ab = e.target.closest('[data-addtype]');
+  if (ab) { doAddPerson(ab.getAttribute('data-addtype')); }
+});
+
+function doRename(input) {
+  var old = input.getAttribute('data-orig');
+  var neo = input.value.trim();
+  if (!neo || neo === old) return;
+  if (V.find(function(v){ return v.name===neo; })) { toast('Name already exists'); input.value=old; return; }
+  var v = V.find(function(x){ return x.name===old; });
+  if (!v) return;
+  v.name = neo;
+  input.setAttribute('data-orig', neo);
+  // Update all data-person attrs
+  document.querySelectorAll('[data-person="'+old+'"]').forEach(function(el){ el.setAttribute('data-person',neo); });
+  // Update schedule
+  S.forEach(function(w) {
+    ['Seeds','Sow','Sprouts'].forEach(function(g) {
+      w[g].staff = w[g].staff.map(function(n){ return n===old?neo:n; });
+      if (w[g].head===old) w[g].head=neo;
+    });
+  });
+  save(); drawSchedule(); drawStats(); toast('✓ Renamed');
+}
+
+function doPhone(input) {
+  var name = input.getAttribute('data-person');
+  var v = V.find(function(x){ return x.name===name; });
+  if (v) { v.phone = input.value.trim(); save(); toast('✓ Phone updated'); }
+}
+
+function doToggleGroup(name, grp) {
+  var v = V.find(function(x){ return x.name===name; });
+  if (!v || v.type==='head') return;
+  var i = v.groups.indexOf(grp);
+  if (i>=0) {
+    if (v.groups.length===1) { toast('Keep at least one group'); return; }
+    v.groups.splice(i,1);
+  } else { v.groups.push(grp); }
+  save(); drawDirectory(); toast('✓ Groups updated');
+}
+
+function doDelete(name) {
+  if (!confirm('Remove ' + name + ' from the directory?')) return;
+  V = V.filter(function(v){ return v.name!==name; });
+  save(); drawDirectory(); drawStats(); toast('✓ Removed ' + name);
+}
+
+var _newGrps = [];
+function doAddPerson(type) {
+  _newGrps = [];
+  var startOpt = type==='parent'
+    ? '<label class="form-label" style="margin-top:4px">Start Month</label>'
+      + '<select class="form-input form-select" id="newStart">'
+      + '<option value="">Full year (April 2026)</option>'
+      + '<option value="2027-00">January 2027</option></select>'
+    : '';
+  var body = '<label class="form-label">Name</label>'
+    + '<input class="form-input" id="newName" placeholder="Full name">'
+    + '<label class="form-label">Phone</label>'
+    + '<input class="form-input" id="newPhone" placeholder="e.g. 404-555-0123">'
+    + '<label class="form-label">Groups</label>'
+    + '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">'
+    + '<button type="button" class="grp-pick-btn grp-seeds off" id="gp-Seeds" onclick="tng(\'Seeds\')">🌱 Seeds</button>'
+    + '<button type="button" class="grp-pick-btn grp-sow off" id="gp-Sow" onclick="tng(\'Sow\')">🪴 Sow</button>'
+    + '<button type="button" class="grp-pick-btn grp-sprouts off" id="gp-Sprouts" onclick="tng(\'Sprouts\')">🌳 Sprouts</button>'
+    + '</div>' + startOpt;
+  var lbl = type==='parent' ? 'Add Parent' : 'Add Volunteer';
+  var footer = '<button class="btn btn-cancel" onclick="closeModal()">Cancel</button>'
+    + '<button class="btn btn-save" id="mBtnNewPerson">' + lbl + '</button>';
+  openModal('Add ' + lbl, body, footer);
+  document.getElementById('mBtnNewPerson').onclick = function() {
+    var name  = (document.getElementById('newName').value||'').trim();
+    var phone = (document.getElementById('newPhone').value||'').trim()||'TBD';
+    var startEl = document.getElementById('newStart');
+    var start = startEl ? (startEl.value||null) : null;
+    if (!name) { toast('Enter a name'); return; }
+    if (!_newGrps.length) { toast('Select at least one group'); return; }
+    if (V.find(function(v){ return v.name===name; })) { toast('Name already exists'); return; }
+    V.push({name:name,phone:phone,type:type,groups:_newGrps.slice(),start:start,couple:null});
+    _newGrps=[];
+    closeModal(); save(); drawDirectory(); drawStats(); toast('✓ Added ' + name);
+  };
+}
+function tng(g) {
+  var el = document.getElementById('gp-'+g);
+  var i = _newGrps.indexOf(g);
+  if (i>=0) { _newGrps.splice(i,1); el.classList.add('off'); }
+  else { _newGrps.push(g); el.classList.remove('off'); }
+}
+
+// ── COUPLES ───────────────────────────────────────────────
+function drawCouples() {
+  var html = COUPLES.map(function(c) {
+    var p1 = V.find(function(v){ return v.name===c.members[0]; })||{phone:'TBD'};
+    var p2 = V.find(function(v){ return v.name===c.members[1]; })||{phone:'TBD'};
+    var sn = c.start ? '<span class="start-badge">Jan 2027+</span>' : '';
+    var ams = Object.keys(CMA[c.id]||{});
+    var rows = ams.map(function(mk) {
+      var who   = CMA[c.id][mk];
+      var other = c.members.filter(function(m){ return m!==who; })[0]||'';
+      var wk    = S.find(function(w){ return w.monthKey===mk; });
+      var lbl   = wk ? wk.monthLabel.replace(' 2026',"'26").replace(' 2027',"'27") : mk;
+      return '<tr>'
+        + '<td class="rot-month">' + xe(lbl) + '</td>'
+        + '<td><span class="ptag ptag-parent" style="pointer-events:none;cursor:default">' + xe(who) + '</span></td>'
+        + '<td class="rot-off">' + xe(other) + '</td>'
+        + '</tr>';
+    }).join('');
+    return '<div class="couple-card"><div class="couple-head">'
+      + '<div class="couple-names">' + xe(c.members[0]) + '<span class="couple-amp">&amp;</span>' + xe(c.members[1]) + sn + '</div>'
+      + '<div class="couple-phones">📞 ' + xe(p1.phone||'TBD') + ' &nbsp;·&nbsp; 📞 ' + xe(p2.phone||'TBD') + '</div>'
+      + '</div><table class="rotation-table"><thead><tr>'
+      + '<th>Month</th><th>Serving ✅</th><th>Off 🏠</th>'
+      + '</tr></thead><tbody>' + rows + '</tbody></table></div>';
+  }).join('');
+  document.getElementById('couplesContent').innerHTML = html;
+}
+
+// ── STATS ─────────────────────────────────────────────────
+function drawStats() {
+  var st = {};
+  V.filter(function(v){ return v.type!=='head'; }).forEach(function(v){
+    st[v.name]={total:0,Seeds:0,Sow:0,Sprouts:0};
+  });
+  S.forEach(function(w) {
+    ['Seeds','Sow','Sprouts'].forEach(function(g) {
+      w[g].staff.forEach(function(n) {
+        if (!st[n]) st[n]={total:0,Seeds:0,Sow:0,Sprouts:0};
+        st[n].total++; st[n][g]++;
+      });
+    });
+  });
+  var rows = V.filter(function(v){ return v.type!=='head'; }).map(function(v) {
+    var s = st[v.name]||{total:0,Seeds:0,Sow:0,Sprouts:0};
+    var rc = v.type==='parent'?'rb-parent':'rb-vol';
+    var sn = v.start?'<span class="start-badge">Jan+</span>':'';
+    return '<tr><td><strong>' + xe(v.name) + '</strong>' + sn + '</td>'
+      + '<td>' + xe(v.phone||'TBD') + '</td>'
+      + '<td><span class="role-badge ' + rc + '">' + roleLabel(v.type) + '</span></td>'
+      + '<td class="num stat-num">' + s.total + '</td>'
+      + '<td class="num stat-num">' + s.Seeds + '</td>'
+      + '<td class="num stat-num">' + s.Sow + '</td>'
+      + '<td class="num stat-num">' + s.Sprouts + '</td>'
+      + '</tr>';
+  }).join('');
+  document.getElementById('statsBody').innerHTML = rows;
+}
+
+// ── TABS ──────────────────────────────────────────────────
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+  if (id==='directory') drawDirectory();
+  if (id==='couples')   drawCouples();
+  if (id==='stats')     drawStats();
+}
+
+// ── BOOT ──────────────────────────────────────────────────
+loadState();
+drawSchedule();
+drawStats();
+</script>
+</body>
+</html>
